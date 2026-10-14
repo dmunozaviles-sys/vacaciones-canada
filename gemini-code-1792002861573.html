@@ -1,0 +1,22 @@
+<script>
+    document.querySelectorAll('.val-check').forEach(function(checkbox) {
+        checkbox.addEventListener('click', function(event) {
+            // Validar al marcar (por si fue accidente)
+            if (this.checked) {
+                const confirmarMarcar = confirm("¿Estás seguro de marcar este requisito como completado?");
+                if (!confirmarMarcar) {
+                    event.preventDefault();
+                    this.checked = false; // Lo desmarca si cancela
+                }
+            } 
+            // Validar al desmarcar
+            else {
+                const confirmarDesmarcar = confirm("¿Estás seguro de desmarcar este requisito?");
+                if (!confirmarDesmarcar) {
+                    event.preventDefault();
+                    this.checked = true; // Lo vuelve a marcar si cancela
+                }
+            }
+        });
+    });
+</script>
