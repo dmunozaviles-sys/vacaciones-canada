@@ -1,22 +1,151 @@
-<script>
-    document.querySelectorAll('.val-check').forEach(function(checkbox) {
-        checkbox.addEventListener('click', function(event) {
-            // Validar al marcar (por si fue accidente)
-            if (this.checked) {
-                const confirmarMarcar = confirm("¿Estás seguro de marcar este requisito como completado?");
-                if (!confirmarMarcar) {
-                    event.preventDefault();
-                    this.checked = false; // Lo desmarca si cancela
-                }
-            } 
-            // Validar al desmarcar
-            else {
-                const confirmarDesmarcar = confirm("¿Estás seguro de desmarcar este requisito?");
-                if (!confirmarDesmarcar) {
-                    event.preventDefault();
-                    this.checked = true; // Lo vuelve a marcar si cancela
-                }
-            }
-        });
-    });
-</script>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 580px; width: 100%; margin: 0 auto; background-color: #ffffff; font-family: 'Montserrat', Helvetica, Arial, sans-serif; color: #2c2a29; border-collapse: separate; border-spacing: 0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+  
+  <!-- Header compacto con Logo y Pill "SERIE DE WEBINARS BRADY" -->
+  <tr>
+    <td align="left" style="background-color: #002d72; padding: 16px 24px; border-top-left-radius: 12px; border-top-right-radius: 12px;">
+      <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
+        <tr>
+          <td align="left" style="vertical-align: middle;">
+            <a href="https://www.bradyid.com.mx" target="_blank" style="text-decoration: none;">
+              <img src="https://www.bradyid.com.mx/-/media/mx-smartsite-images/logo/logo-brady-blanco.png" alt="Brady" width="110" style="display: block; border: 0; outline: none; text-decoration: none;" />
+            </a>
+          </td>
+          <td align="right" style="vertical-align: middle; text-align: right;">
+            <span style="background-color: #f1f5f9; color: #002d72; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; padding: 5px 12px; border-radius: 4px; display: inline-block;">
+              SERIE DE WEBINARS BRADY
+            </span>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- Bloque Hero principal: Fondo Azul Branding #0072CE -->
+  <tr>
+    <td align="left" style="background-color: #0072CE; padding: 24px 24px; color: #ffffff; text-align: center;">
+      <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
+        <tr>
+          <td align="center" style="padding-bottom: 8px;">
+            <span style="background-color: #ffd100; color: #002d72; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 4px 12px; border-radius: 20px; display: inline-block;">
+              &iexcl;MA&Ntilde;ANA EN VIVO!
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" style="font-size: 20px; line-height: 26px; font-weight: 800; color: #ffffff; padding-bottom: 8px;">
+            Mantenimiento de fin de a&ntilde;o: prevenci&oacute;n de riesgos y marcaje de pisos
+          </td>
+        </tr>
+        <tr>
+          <td align="center" style="font-size: 13px; line-height: 18px; color: #e0f0ff; padding-bottom: 16px;">
+            &#128197; <strong>Jueves 15 de Octubre</strong> &nbsp;|&nbsp; &#128336; <strong>10:00 h - 11:00 h (Centro de M&eacute;xico)</strong>
+          </td>
+        </tr>
+        <tr>
+          <td align="center">
+            <table border="0" cellpadding="0" cellspacing="0" align="center" style="margin: 0 auto; border-collapse: collapse;">
+              <tr>
+                <td align="center" style="background-color: #ffd100; border-radius: 6px; padding: 12px 28px; text-align: center;">
+                  <a href="https://attendee.gotowebinar.com/register/782972583104440672" target="_blank" style="font-size: 14px; font-weight: 700; color: #002d72; text-decoration: none; display: inline-block;">
+                    Reservar mi acceso al webinar &rarr;
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- Ficha del Ponente -->
+  <tr>
+    <td style="padding: 20px 24px; background-color: #ffffff;">
+      <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
+        <tr>
+          <td style="vertical-align: middle; padding-right: 12px;">
+            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;">
+              <tr>
+                <td style="vertical-align: middle; padding-right: 10px;">
+                  <div style="width: 52px; height: 52px; border-radius: 50%; overflow: hidden; border: 2px solid #0072ce; display: block;">
+                    <img src="https://www.bradyid.com.mx/-/media/mx-smartsite-images/correos/webinars/carlos-vallecillo.jpg" alt="Carlos Vallecillo" width="52" height="52" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 15%; transform: scale(1.3); transform-origin: center 20%;" />
+                  </div>
+                </td>
+                <td style="vertical-align: middle;">
+                  <p style="font-size: 11px; font-weight: 700; color: #0072ce; margin: 0; text-transform: uppercase;">PONENTE EXPERTO</p>
+                  <p style="font-size: 13px; font-weight: 700; color: #002d72; margin: 0; line-height: 16px;">Carlos Vallecillo</p>
+                  <p style="font-size: 11px; color: #64748b; margin: 0;">Gerente de territorio, Brady M&eacute;xico</p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- Contenido Ultrafoco: 3 Puntos -->
+  <tr>
+    <td style="padding: 0 24px 20px 24px;">
+      <div style="background-color: #f8fafc; border-left: 4px solid #0072ce; padding: 16px; border-radius: 0 8px 8px 0;">
+        <p style="font-size: 13px; font-weight: 700; color: #002d72; margin: 0 0 10px 0;">
+          Lo que ver&aacute;s en esta sesi&oacute;n de 1 hora:
+        </p>
+        <ul style="margin: 0; padding-left: 18px; font-size: 12px; line-height: 18px; color: #334155;">
+          <li style="margin-bottom: 6px;">Aprovecha el tiempo de inactividad de fin de a&ntilde;o para implementar un sistema efectivo de marcaje de piso.</li>
+          <li style="margin-bottom: 6px;">Cumplimiento con las normas pertinentes.</li>
+          <li>Herramientas adicionales para facilitar y agilizar la implementaci&oacute;n.</li>
+        </ul>
+      </div>
+    </td>
+  </tr>
+
+  <!-- Botón Secundario de Cierre -->
+  <tr>
+    <td align="center" style="padding: 0 24px 24px 24px;">
+      <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
+        <tr>
+          <td align="center">
+            <a href="https://attendee.gotowebinar.com/register/782972583104440672" target="_blank" style="font-size: 13px; font-weight: 700; color: #002d72; text-decoration: underline;">
+              &iexcl;Haz clic aqu&iacute; para confirmar tu asistencia antes de que cerremos registros!
+            </a>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- Banner del Calendario Mensual -->
+  <tr>
+    <td style="padding: 16px 24px; background-color: #f1f5f9; border-top: 1px solid #e2e8f0;">
+      <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
+        <tr>
+          <td width="30" align="center" style="vertical-align: middle; padding-right: 10px;">
+            <span style="font-size: 18px;">&#128197;</span>
+          </td>
+          <td style="vertical-align: middle;">
+            <p style="font-size: 11px; font-weight: 700; color: #002d72; margin: 0;">
+              &iquest;Buscas capacitaci&oacute;n para el resto del a&ntilde;o?
+            </p>
+            <a href="https://drive.google.com/file/d/1C_pNl6fG98KtHUimp5mN94_t-BnoF-BZ/view?usp=sharing" target="_blank" style="font-size: 11px; font-weight: 700; color: #0072ce; text-decoration: underline;">
+              Descarga la agenda mensual de webinars &rarr;
+            </a>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- Footer -->
+  <tr>
+    <td style="background-color: #002d72; padding: 16px 24px; color: #94a3b8; font-size: 10px; line-height: 15px; text-align: center; border-bottom-left-radius: 12px; border-bottom-right-radius: 12px;">
+      <p style="margin: 0 0 4px 0; font-weight: 700; color: #ffffff; text-transform: uppercase;">
+        Brady M&eacute;xico &middot; Seguridad e Identificaci&oacute;n Industrial
+      </p>
+      <p style="margin: 0;">
+        <a href="https://www.bradyid.com.mx" target="_blank" style="color: #ffd100; text-decoration: none;">BradyID.com.mx</a> &nbsp;|&nbsp; &copy; 2026 W.H. Brady
+      </p>
+    </td>
+  </tr>
+
+</table>
