@@ -174,7 +174,7 @@
             font-size: 1.3em;
         }
 
-        /* Responsive Table for original Checklist */
+        /* Responsive Table for Checklist */
         .table-responsive {
             width: 100%;
             overflow-x: auto;
@@ -219,7 +219,7 @@
             box-sizing: border-box;
         }
 
-        /* Day itinerary original cards */
+        /* Day itinerary cards */
         .day-card {
             background: var(--card-bg);
             padding: 18px;
@@ -233,6 +233,14 @@
         .day-card:hover {
             transform: translateX(4px);
             box-shadow: 0 8px 20px rgba(37, 99, 235, 0.1);
+        }
+
+        .optional-activity {
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px dashed #e2e8f0;
+            font-size: 0.95em;
+            color: #0284c7;
         }
 
         .total-budget {
@@ -262,12 +270,12 @@
         <div class="content-body">
             <!-- Countdown Timer -->
             <div class="countdown-box">
-                <div style="font-size: 1.1em; color: var(--text-main); font-weight: bold;">⏳ Cuenta regresiva desde la salida de Querétaro a CDMX 🚀</div>
+                <div style="font-size: 1.1em; color: var(--text-main); font-weight: bold;">⏳ Cuenta regresiva desde la salida de Querétaro a Ciudad de México 🚀</div>
                 <div class="countdown-grid" id="countdown">
                     <div class="time-card"><span class="time-num" id="days">00</span><span class="time-label">Días</span></div>
                     <div class="time-card"><span class="time-num" id="hours">00</span><span class="time-label">Horas</span></div>
-                    <div class="time-card"><span class="time-num" id="minutes">00</span><span class="time-label">Min</span></div>
-                    <div class="time-card"><span class="time-num" id="seconds">00</span><span class="time-label">Seg</span></div>
+                    <div class="time-card"><span class="time-num" id="minutes">00</span><span class="time-label">Minutos</span></div>
+                    <div class="time-card"><span class="time-num" id="seconds">00</span><span class="time-label">Segundos</span></div>
                 </div>
             </div>
 
@@ -281,7 +289,7 @@
 
             <div class="info-box blue">
                 🎒 <strong>Clase de viaje: Intermedio / Confort Moderado</strong><br>
-                <em>Estatus:</em> Vuelos, Airbnbs y auto de renta <strong>ya se encuentran cubiertos y pagados</strong>. El presupuesto restante contempla actividades clave y comidas compartidas.
+                <em>Estatus:</em> Los vuelos, los alojamientos y la renta del automóvil <strong>ya se encuentran cubiertos y pagados</strong>. El presupuesto restante contempla actividades clave y comidas compartidas.
             </div>
 
             <div class="info-box green">
@@ -294,7 +302,7 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>Tarea / Requisito</th>
+                            <th>Tarea o requisito</th>
                             <th style="text-align: center; width: 50px;">Fany</th>
                             <th style="text-align: center; width: 50px;">Diego</th>
                             <th style="text-align: center; width: 50px;">Karen</th>
@@ -315,13 +323,13 @@
                     </tbody>
                 </table>
             </div>
-            <p style="font-size: 0.8em; color: var(--text-muted); text-align: center;">💡 <em>Desliza la tabla horizontalmente en tu celular si es necesario para ver todas las columnas.</em></p>
+            <p style="font-size: 0.8em; color: var(--text-muted); text-align: center;">💡 <em>Desliza la tabla horizontalmente en tu dispositivo móvil si es necesario para ver todas las columnas.</em></p>
 
             <!-- 2. Ropa -->
             <h2>2. 🧥 Guía de empaque y ropa necesaria</h2>
             <div class="info-box">
                 <ul style="padding-left: 18px; margin: 0;">
-                    <li><strong>Alberta [0 °C a -8 °C] ❄️:</strong> Capa base térmica, chamarra aislante de pluma, cortavientos impermeable, botas de montaña con tracción, gorro, guantes y buff.</li>
+                    <li><strong>Alberta [0 °C a -8 °C] ❄️:</strong> Capa base térmica, chamarra aislante de pluma, cortavientos impermeable, botas de montaña con tracción, gorro, guantes y pañuelo tubular (buff).</li>
                     <li style="margin-top: 6px;"><strong>Vancouver [10 °C a 3 °C] 🌧️:</strong> Chamarra impermeable tipo Gore-Tex con gorro, calzado resistente a la humedad y paraguas compacto.</li>
                 </ul>
             </div>
@@ -330,8 +338,8 @@
             <h2>3. 💳 Guía de dinero en Canadá</h2>
             <div class="info-box">
                 <ul style="padding-left: 18px; margin: 0;">
-                    <li><strong>Efectivo (CAD):</strong> País 100% cashless. Lleva reserva mínima (50 a 100 CAD por persona) solo para emergencias.</li>
-                    <li style="margin-top: 6px;"><strong>Tarjetas:</strong> Visa y Mastercard aceptadas universalmente. Al pagar en terminales, <strong>elige siempre CAD</strong>.</li>
+                    <li><strong>Efectivo (CAD):</strong> País totalmente digital. Se recomienda llevar una reserva mínima (50 a 100 dólares canadienses por persona) exclusivamente para emergencias.</li>
+                    <li style="margin-top: 6px;"><strong>Tarjetas:</strong> Las tarjetas Visa y Mastercard son aceptadas universalmente. Al pagar en las terminales electrónicas, <strong>elige siempre la moneda local (CAD)</strong>.</li>
                 </ul>
             </div>
 
@@ -342,85 +350,109 @@
                     <tr>
                         <th>Servicio</th>
                         <th>Detalle</th>
-                        <th>Referencia / Clave</th>
+                        <th>Referencia o clave</th>
                     </tr>
-                    <tr class="tr-hover"><td>✈️ Vuelo CDMX-Calgary</td><td>WestJet (WS2229) - 05 nov</td><td><strong>Grupo:</strong> IOEKTS</td></tr>
-                    <tr class="tr-hover"><td>🚗 Renta de Auto</td><td>SUV Mazda CX-5 (05-10 nov)</td><td><strong>Reserva:</strong> 9738815603</td></tr>
-                    <tr class="tr-hover"><td>✈️ Vuelo Calgary-Vancouver</td><td>Flair Airlines (F8805) - 10 nov</td><td><strong>Grupo:</strong> WSMA2W</td></tr>
-                    <tr class="tr-hover"><td>✈️ Vuelo Regreso YVR-MEX</td><td>Aeroméxico (AM695) - 15 nov</td><td><strong>Web:</strong> LIFVAQ</td></tr>
+                    <tr class="tr-hover"><td>✈️ Vuelo CDMX-Calgary</td><td>WestJet (WS2229) — 5 de noviembre</td><td><strong>Grupo:</strong> IOEKTS</td></tr>
+                    <tr class="tr-hover"><td>🚗 Renta de automóvil</td><td>SUV Mazda CX-5 (5 al 10 de noviembre)</td><td><strong>Reserva:</strong> 9738815603</td></tr>
+                    <tr class="tr-hover"><td>✈️ Vuelo Calgary-Vancouver</td><td>Flair Airlines (F8805) — 10 de noviembre</td><td><strong>Grupo:</strong> WSMA2W</td></tr>
+                    <tr class="tr-hover"><td>✈️ Vuelo de regreso YVR-MEX</td><td>Aeroméxico (AM695) — 15 de noviembre</td><td><strong>Web:</strong> LIFVAQ</td></tr>
                 </table>
             </div>
 
-            <!-- 5. Cronograma Original -->
-            <h2>5. 🗓️ Cronograma y Costos</h2>
+            <!-- 5. Cronograma con actividades opcionales añadidas -->
+            <h2>5. 🗓️ Cronograma y costos</h2>
 
             <div class="day-card">
-                <strong>Día 1: Miq. 4 nov - Salida QRO a CDMX 🎒</strong>
+                <strong>Día 1: Miércoles 4 de noviembre — Salida de Querétaro a Ciudad de México 🎒</strong>
                 <ul style="padding-left: 20px; margin: 6px 0 0 0; color: var(--text-muted);">
-                    <li>15:00 h: Autobús Primera Plus desde TAQ (Querétaro) a T1 AICM.</li>
-                    <li>22:15 h: Documentación en mostrador de WestJet.</li>
+                    <li>15:00 h: Autobús de Primera Plus desde la terminal TAQ (Querétaro) hacia la Terminal 1 del Aeropuerto Internacional de la Ciudad de México.</li>
+                    <li>22:15 h: Documentación en el mostrador de WestJet.</li>
                     <li>💰 <em>Costo:</em> $665 MXN por persona.</li>
                 </ul>
+                <div class="optional-activity">
+                    ✨ <strong>Actividad opcional:</strong> Disfrutar de una cena ligera o un café en la zona de abordaje internacional antes del vuelo nocturno.
+                </div>
             </div>
 
             <div class="day-card">
-                <strong>Día 2: Jue. 5 nov - ¡Llegada a las Rocosas! 🏔️</strong>
+                <strong>Día 2: Jueves 5 de noviembre — ¡Llegada a las Montañas Rocosas! 🏔️</strong>
                 <ul style="padding-left: 20px; margin: 6px 0 0 0; color: var(--text-muted);">
-                    <li>Vuelo a Calgary, recogida de auto y manejo escénico hacia Canmore.</li>
+                    <li>Vuelo hacia Calgary, recogida del automóvil rentado y trayecto escénico rumbo a Canmore.</li>
                     <li>💰 <em>Costo:</em> $1,200 - $1,800 MXN aprox. por persona (Gasolina <strong>dividida entre tres</strong>).</li>
                 </ul>
+                <div class="optional-activity">
+                    ✨ <strong>Actividad opcional:</strong> Paseo nocturno por el centro histórico de Canmore y visita a una cafetería local para ambientarse en el clima alpino.
+                </div>
             </div>
 
             <div class="day-card">
-                <strong>Día 3: Vie. 6 nov - Helicóptero y Grandes Lagos 🚁</strong>
+                <strong>Día 3: Viernes 6 de noviembre — Paseo en helicóptero y grandes lagos 🚁</strong>
                 <ul style="padding-left: 20px; margin: 6px 0 0 0; color: var(--text-muted);">
-                    <li>Vuelo panorámico sobre cumbres y visita a los lagos Louise y Moraine.</li>
+                    <li>Vuelo panorámico sobre las cumbres nevadas y visita imperdible a los lagos Louise y Moraine.</li>
                     <li>💰 <em>Costo:</em> $4,500 - $6,500 MXN aprox. por persona.</li>
                 </ul>
+                <div class="optional-activity">
+                    ✨ <strong>Actividad opcional:</strong> Disfrutar de un chocolate caliente artesanal en el mirador del Fairmont Château Lake Louise con vista al glaciar.
+                </div>
             </div>
 
             <div class="day-card">
-                <strong>Día 4: Sáb. 7 nov - Cañones de hielo ❄️</strong>
+                <strong>Día 4: Sábado 7 de noviembre — Cañones de hielo y relajación ❄️</strong>
                 <ul style="padding-left: 20px; margin: 6px 0 0 0; color: var(--text-muted);">
-                    <li>Caminata en Johnston Canyon y aguas termales en Banff.</li>
+                    <li>Caminata guiada en Johnston Canyon y tarde de descanso en las aguas termales de Banff.</li>
                     <li>💰 <em>Costo:</em> $400 - $700 MXN aprox. por persona.</li>
                 </ul>
+                <div class="optional-activity">
+                    ✨ <strong>Actividad opcional:</strong> Visita a las tiendas de artesanías y galerías de arte en la pintoresca avenida principal de Banff.
+                </div>
             </div>
 
             <div class="day-card">
-                <strong>Día 5: Dom. 8 nov - Traslado a Calgary 🏙️</strong>
+                <strong>Día 5: Domingo 8 de noviembre — Regreso a Calgary 🏙️</strong>
                 <ul style="padding-left: 20px; margin: 6px 0 0 0; color: var(--text-muted);">
-                    <li>Regreso a Calgary y ruta fotográfica (*Wonderland* y *Peace Bridge*).</li>
+                    <li>Retorno a Calgary y recorrido fotográfico por puntos clave como el Calgary Tower y el Peace Bridge.</li>
                     <li>💰 <em>Costo:</em> $400 - $800 MXN por persona (Comidas compartidas <strong>divididas entre tres</strong>).</li>
                 </ul>
+                <div class="optional-activity">
+                    ✨ <strong>Actividad opcional:</strong> Visita al mercado gastronómico <em>East Village</em> para probar especialidades locales en la cena.
+                </div>
             </div>
 
             <div class="day-card">
-                <strong>Día 6: Lun. 9 nov - Zipline y vuelo a Vancouver 🌊</strong>
+                <strong>Día 6: Lunes 9 de noviembre — Aventura extrema y vuelo a Vancouver 🌊</strong>
                 <ul style="padding-left: 20px; margin: 6px 0 0 0; color: var(--text-muted);">
-                    <li>Monster Zipline en WinSport, entrega de auto y vuelo matutino a Vancouver el día 10.</li>
+                    <li>Experiencia en Monster Zipline en WinSport, entrega del automóvil de renta y vuelo matutino rumbo a Vancouver el día 10.</li>
                     <li>💰 <em>Costo:</em> $2,000 - $3,300 MXN aprox. por persona.</li>
                 </ul>
+                <div class="optional-activity">
+                    ✨ <strong>Actividad opcional:</strong> Caminata nocturna por el distrito financiero e iluminado de Calgary antes de descansar.
+                </div>
             </div>
 
             <div class="day-card">
-                <strong>Días 7 al 11: Mié. 11 al Sáb. 14 nov - Vancouver 🌲</strong>
+                <strong>Días 7 al 11: Miércoles 11 al Sábado 14 de noviembre — Exploración en Vancouver 🌲</strong>
                 <ul style="padding-left: 20px; margin: 6px 0 0 0; color: var(--text-muted);">
-                    <li>Stanley Park, Capilano Suspension Bridge, Grouse Mountain y Gastown.</li>
+                    <li>Recorridos por Stanley Park, el puente colgante Capilano, la montaña Grouse y el histórico barrio de Gastown.</li>
                     <li>💰 <em>Costo:</em> $1,800 - $2,800 MXN aprox. por persona.</li>
                 </ul>
+                <div class="optional-activity">
+                    ✨ <strong>Actividad opcional:</strong> Degustación de comida marina fresca en el mercado público de la isla Granville.
+                </div>
             </div>
 
             <div class="day-card">
-                <strong>Día 12: Dom. 15 nov - Regreso a casa ✈️❤️</strong>
+                <strong>Día 12: Domingo 15 de noviembre — Regreso a casa ✈️❤️</strong>
                 <ul style="padding-left: 20px; margin: 6px 0 0 0; color: var(--text-muted);">
-                    <li>Vuelo YVR a CDMX y autobús de regreso a Querétaro.</li>
+                    <li>Vuelo desde el Aeropuerto de Vancouver hacia la Ciudad de México y conexión en autobús de regreso a Querétaro.</li>
                     <li>💰 <em>Costo:</em> $1,000 - $1,500 MXN por persona.</li>
                 </ul>
+                <div class="optional-activity">
+                    ✨ <strong>Actividad opcional:</strong> Compra rápida de recuerdos típicos de última hora en el aeropuerto antes de abordar.
+                </div>
             </div>
 
             <div class="total-budget">
-                📊 Rango de Costos Totales Estimados por Actividades y Logística (por persona): $11,765 - $17,465 MXN
+                📊 Rango de costos totales estimados por actividades y logística (por persona): $11,765 - $17,465 MXN
             </div>
         </div>
     </div>
