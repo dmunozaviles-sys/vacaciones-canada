@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canadá: Rocosas y Pacífico 🍁</title>
+    <title>Canadá: Rocosas y Pacífico</title>
     <style>
         :root {
             --primary: #2563eb;
@@ -16,11 +16,11 @@
         }
 
         body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
             color: var(--text-main);
             margin: 0;
-            padding: 20px 10px;
+            padding: 10px;
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -31,119 +31,84 @@
             width: 100%;
             max-width: 900px;
             background: #f8fafc;
-            border-radius: 20px;
+            border-radius: 16px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
             overflow: hidden;
-            animation: fadeIn 0.8s ease-out;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Banner Header con bandera a la derecha del título */
         .banner {
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.85), rgba(30, 58, 138, 0.85)), url('https://images.unsplash.com/photo-1503614472-8c93d56e92ce?q=80&w=1200&auto=format&fit=crop') center/cover;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.9));
             color: white;
-            padding: 40px 20px;
+            padding: 30px 15px;
             text-align: center;
         }
 
-        .banner-title-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin: 10px 0 5px 0;
-        }
-
         .banner h1 {
-            margin: 0;
-            font-size: 2em;
-        }
-
-        .banner img {
-            width: 45px;
-            height: auto;
-            border-radius: 6px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            margin: 0 0 10px 0;
+            font-size: 1.6em;
         }
 
         .banner p {
             color: #cbd5e1;
-            font-size: 1.05em;
-            margin-bottom: 20px;
+            font-size: 0.95em;
+            margin-bottom: 15px;
         }
 
         .badge-date {
             display: inline-block;
             background: rgba(37, 99, 235, 0.9);
-            padding: 8px 18px;
-            border-radius: 30px;
-            font-size: 0.9em;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
             font-weight: 600;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
         }
 
         .content-body {
-            padding: 25px;
+            padding: 15px;
         }
 
-        /* Countdown */
         .countdown-box {
             background: var(--card-bg);
-            padding: 20px;
-            border-radius: 16px;
-            margin-bottom: 25px;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
             text-align: center;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
             border: 2px dashed #93c5fd;
         }
 
         .countdown-grid {
             display: flex;
             justify-content: center;
-            gap: 12px;
+            gap: 8px;
             flex-wrap: wrap;
-            margin-top: 12px;
+            margin-top: 10px;
         }
 
         .time-card {
             background: #f1f5f9;
-            padding: 10px 14px;
-            border-radius: 12px;
-            min-width: 65px;
-            transition: transform 0.3s ease;
-        }
-
-        .time-card:hover {
-            transform: translateY(-3px);
-            background: #e2e8f0;
+            padding: 8px 10px;
+            border-radius: 8px;
+            min-width: 50px;
         }
 
         .time-num {
-            font-size: 1.6em;
+            font-size: 1.3em;
             font-weight: 700;
             color: var(--primary);
             display: block;
         }
 
         .time-label {
-            font-size: 0.7em;
+            font-size: 0.65em;
             color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
-        /* Status Cards Grid */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin-bottom: 25px;
+            gap: 10px;
+            margin-bottom: 20px;
         }
 
         @media(min-width: 600px) {
@@ -152,151 +117,123 @@
 
         .status-card {
             background: var(--card-bg);
-            padding: 15px;
-            border-radius: 14px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            padding: 12px;
+            border-radius: 10px;
             text-align: center;
-            border-top: 5px solid var(--primary);
-            transition: all 0.3s ease;
-        }
-
-        .status-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.15);
+            border-top: 4px solid var(--primary);
+            font-size: 0.9em;
         }
 
         .info-box {
             background: var(--card-bg);
-            padding: 18px;
-            border-radius: 14px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            font-size: 0.9em;
         }
 
-        .info-box.blue { border-left: 6px solid #0284c7; background: linear-gradient(to right, #f0f9ff, #ffffff); }
-        .info-box.green { border-left: 6px solid #10b981; }
-        .info-box.purple { border-left: 6px solid #8b5cf6; }
+        .info-box.blue { border-left: 5px solid #0284c7; }
+        .info-box.green { border-left: 5px solid #10b981; }
 
         h2 {
             color: var(--text-main);
             border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 8px;
-            margin-top: 35px;
-            font-size: 1.3em;
+            padding-bottom: 6px;
+            margin-top: 25px;
+            font-size: 1.15em;
         }
 
-        /* Responsive Table for Checklist */
         .table-responsive {
             width: 100%;
             overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
             margin-bottom: 15px;
             background: var(--card-bg);
-            border-radius: 14px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-            padding: 10px;
+            border-radius: 10px;
+            padding: 5px;
         }
 
         table {
             width: 100%;
-            min-width: 600px;
+            min-width: 550px;
             border-collapse: collapse;
         }
 
         th {
             background: #1e293b;
             color: white;
-            padding: 12px;
+            padding: 10px;
             text-align: left;
-            font-size: 0.9em;
+            font-size: 0.85em;
         }
 
         td {
-            padding: 12px;
+            padding: 10px;
             border-bottom: 1px solid #e2e8f0;
-            font-size: 0.9em;
-        }
-
-        .tr-hover:hover {
-            background-color: #f8fafc;
+            font-size: 0.85em;
         }
 
         .comment-input {
             width: 100%;
-            padding: 6px;
+            padding: 5px;
             border: 1px solid #cbd5e1;
-            border-radius: 6px;
-            font-size: 0.85em;
+            border-radius: 4px;
+            font-size: 0.8em;
             box-sizing: border-box;
         }
 
-        /* Day itinerary cards */
         .day-card {
             background: var(--card-bg);
-            padding: 18px;
-            margin-bottom: 15px;
-            border-radius: 14px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 10px;
             border-left: 5px solid var(--primary);
-            transition: all 0.3s ease;
-        }
-
-        .day-card:hover {
-            transform: translateX(4px);
-            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.1);
+            font-size: 0.9em;
         }
 
         .optional-activity {
-            margin-top: 10px;
-            padding-top: 8px;
+            margin-top: 8px;
+            padding-top: 6px;
             border-top: 1px dashed #e2e8f0;
-            font-size: 0.9em;
+            font-size: 0.85em;
             color: #0284c7;
         }
 
         .total-budget {
             background: linear-gradient(135deg, #1e293b, #0f172a);
             color: white;
-            padding: 20px;
-            border-radius: 14px;
-            margin-top: 25px;
-            font-size: 0.95em;
-            line-height: 1.6;
-            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 0.9em;
+            line-height: 1.5;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Banner Header con bandera a la derecha del título -->
         <div class="banner">
-            <div class="banner-title-wrapper">
-                <h1>🏔️ Canadá: Rocosas y Pacífico</h1>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Canada_%28Pantone%29.svg" alt="Bandera de Canadá">
-            </div>
+            <h1>🏔️ Canadá: Rocosas y Pacífico 🇨🇦</h1>
             <p>Itinerario épico, reservas y cuenta regresiva para la gran aventura</p>
             <div class="badge-date">📅 4 al 15 de noviembre de 2026</div>
         </div>
 
         <div class="content-body">
-            <!-- Countdown Timer -->
             <div class="countdown-box">
-                <div style="font-size: 1.1em; color: var(--text-main); font-weight: bold;">⏳ Cuenta regresiva desde la salida de Querétaro a Ciudad de México 🚀</div>
+                <div style="font-size: 1em; color: var(--text-main); font-weight: bold;">⏳ Cuenta regresiva desde la salida de Querétaro a Ciudad de México 🚀</div>
                 <div class="countdown-grid" id="countdown">
                     <div class="time-card"><span class="time-num" id="days">00</span><span class="time-label">Días</span></div>
                     <div class="time-card"><span class="time-num" id="hours">00</span><span class="time-label">Horas</span></div>
-                    <div class="time-card"><span class="time-num" id="minutes">00</span><span class="time-label">Minutos</span></div>
-                    <div class="time-card"><span class="time-num" id="seconds">00</span><span class="time-label">Segundos</span></div>
+                    <div class="time-card"><span class="time-num" id="minutes">00</span><span class="time-label">Min</span></div>
+                    <div class="time-card"><span class="time-num" id="seconds">00</span><span class="time-label">Seg</span></div>
                 </div>
             </div>
 
-            <!-- Cards de estatus -->
             <div class="cards-grid">
-                <div class="status-card">🕒 <strong>Duración</strong><br><span style="font-size:0.9em; color:var(--text-muted);">11 días / 10 noches</span></div>
-                <div class="status-card">✈️ <strong>Vuelos</strong><br><span style="font-size:0.9em; color:var(--text-muted);">Cubiertos</span></div>
-                <div class="status-card">🏡 <strong>Hospedaje</strong><br><span style="font-size:0.9em; color:var(--text-muted);">Cubiertos</span></div>
-                <div class="status-card">🚗 <strong>Auto</strong><br><span style="font-size:0.9em; color:var(--text-muted);">Cubierto</span></div>
+                <div class="status-card">🕒 <strong>Duración</strong><br><span style="font-size:0.85em; color:var(--text-muted);">11 días / 10 noches</span></div>
+                <div class="status-card">✈️ <strong>Vuelos</strong><br><span style="font-size:0.85em; color:var(--text-muted);">Cubiertos</span></div>
+                <div class="status-card">🏡 <strong>Hospedaje</strong><br><span style="font-size:0.85em; color:var(--text-muted);">Cubiertos</span></div>
+                <div class="status-card">🚗 <strong>Auto</strong><br><span style="font-size:0.85em; color:var(--text-muted);">Cubierto</span></div>
             </div>
 
             <div class="info-box blue">
@@ -308,65 +245,60 @@
                 👥 <strong>Grupo de viaje oficial:</strong> Diego, Ana Karen y Fany.
             </div>
 
-            <!-- 1. Checklist Original con Tabla -->
             <h2>1. ✅ Listas de verificación antes del viaje</h2>
             <div class="table-responsive">
                 <table>
                     <thead>
                         <tr>
                             <th>Tarea o requisito</th>
-                            <th style="text-align: center; width: 50px;">Fany</th>
-                            <th style="text-align: center; width: 50px;">Diego</th>
-                            <th style="text-align: center; width: 50px;">Karen</th>
-                            <th style="width: 180px;">Comentarios</th>
+                            <th style="text-align: center; width: 45px;">Fany</th>
+                            <th style="text-align: center; width: 45px;">Diego</th>
+                            <th style="text-align: center; width: 45px;">Karen</th>
+                            <th style="width: 150px;">Comentarios</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="tr-hover"><td>🛂 <strong>Pasaportes vigentes</strong></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td><input type="text" class="comment-input" placeholder="Nota..."></td></tr>
-                        <tr class="tr-hover"><td>📄 <strong>eTA Canadá aprobada</strong></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td><input type="text" class="comment-input" placeholder="Nota..."></td></tr>
-                        <tr class="tr-hover"><td>🖨️ <strong>Impresión de reservas</strong></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td><input type="text" class="comment-input" placeholder="Nota..."></td></tr>
-                        <tr class="tr-hover"><td>💳 <strong>Tarjetas de crédito</strong></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td><input type="text" class="comment-input" placeholder="Nota..."></td></tr>
-                        <tr class="tr-hover"><td>📱 <strong>Roaming o eSIM</strong></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td><input type="text" class="comment-input" placeholder="Nota..."></td></tr>
-                        <tr class="tr-hover"><td>🔋 <strong>Batería portátil</strong></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td><input type="text" class="comment-input" placeholder="Nota..."></td></tr>
-                        <tr class="tr-hover"><td>🔌 <strong>Adaptador de corriente</strong></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td><input type="text" class="comment-input" placeholder="Nota..."></td></tr>
-                        <tr class="tr-hover"><td>🧳 <strong>Bolsas Ziploc</strong></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td><input type="text" class="comment-input" placeholder="Nota..."></td></tr>
-                        <tr class="tr-hover"><td>💊 <strong>Kit de medicamentos</strong></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td><input type="text" class="comment-input" placeholder="Nota..."></td></tr>
-                        <tr class="tr-hover"><td>🧥 <strong>Ropa térmica y calzado</strong></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td><input type="text" class="comment-input" placeholder="Nota..."></td></tr>
+                        <tr><td>🛂 Pasaportes vigentes</td><td style="text-align: center;"><input type="checkbox" class="val-check"></td><td style="text-align: center;"><input type="checkbox" class="val-check"></td><td style="text-align: center;"><input type="checkbox" class="val-check"></td><td><input type="text" class="comment-input" placeholder="Nota..."></td></tr>
+                        <tr><td>📄 eTA Canadá aprobada</td><td style="text-align: center;"><input type="checkbox" class="val-check"></td><td style="text-align: center;"><input type="checkbox" class="val-check"></td><td style="text-align: center;"><input type="checkbox" class="val-check"></td><td><input type="text" class="comment-input" placeholder="Nota..."></td></tr>
+                        <tr><td>🖨️ Impresión de reservas</td><td style="text-align: center;"><input type="checkbox" class="val-check"></td><td style="text-align: center;"><input type="checkbox" class="val-check"></td><td style="text-align: center;"><input type="checkbox" class="val-check"></td><td><input type="text" class="comment-input" placeholder="Nota..."></td></tr>
+                        <tr><td>💳 Tarjetas de crédito</td><td style="text-align: center;"><input type="checkbox" class="val-check"></td><td style="text-align: center;"><input type="checkbox" class="val-check"></td><td style="text-align: center;"><input type="checkbox" class="val-check"></td><td><input type="text" class="comment-input" placeholder="Nota..."></td></tr>
+                        <tr><td>📱 Roaming o eSIM</td><td style="text-align: center;"><input type="checkbox" class="val-check"></td><td style="text-align: center;"><input type="checkbox" class="val-check"></td><td style="text-align: center;"><input type="checkbox" class="val-check"></td><td><input type="text" class="comment-input" placeholder="Nota..."></td></tr>
+                        <tr><td>🔋 Batería portátil</td><td style="text-align: center;"><input type="checkbox" class="val-check"></td><td style="text-align: center;"><input type="checkbox" class="val-check"></td><td style="text-align: center;"><input type="checkbox" class="val-check"></td><td><input type="text" class="comment-input" placeholder="Nota..."></td></tr>
+                        <tr><td>🔌 Adaptador de corriente</td><td style="text-align: center;"><input type="checkbox" class="val-check"></td><td style="text-align: center;"><input type="checkbox" class="val-check"></td><td style="text-align: center;"><input type="checkbox" class="val-check"></td><td><input type="text" class="comment-input" placeholder="Nota..."></td></tr>
+                        <tr><td>🧳 Bolsas Ziploc</td><td style="text-align: center;"><input type="checkbox" class="val-check"></td><td style="text-align: center;"><input type="checkbox" class="val-check"></td><td style="text-align: center;"><input type="checkbox" class="val-check"></td><td><input type="text" class="comment-input" placeholder="Nota..."></td></tr>
+                        <tr><td>💊 Kit de medicamentos</td><td style="text-align: center;"><input type="checkbox" class="val-check"></td><td style="text-align: center;"><input type="checkbox" class="val-check"></td><td style="text-align: center;"><input type="checkbox" class="val-check"></td><td><input type="text" class="comment-input" placeholder="Nota..."></td></tr>
+                        <tr><td>🧥 Ropa térmica y calzado</td><td style="text-align: center;"><input type="checkbox" class="val-check"></td><td style="text-align: center;"><input type="checkbox" class="val-check"></td><td style="text-align: center;"><input type="checkbox" class="val-check"></td><td><input type="text" class="comment-input" placeholder="Nota..."></td></tr>
                     </tbody>
                 </table>
             </div>
-            <p style="font-size: 0.8em; color: var(--text-muted); text-align: center;">💡 <em>Desliza la tabla horizontalmente en tu dispositivo móvil si es necesario para ver todas las columnas.</em></p>
 
-            <!-- 2. Ropa detallada -->
             <h2>2. 🧥 Guía detallada de empaque, ropa y calzado</h2>
             <div class="info-box">
-                <ul style="padding-left: 18px; margin: 0; line-height: 1.8;">
-                    <li><strong>❄️ Región de Alberta (Montañas Rocosas — 0 °C a -8 °C):</strong>
-                        <ul style="margin: 4px 0 10px 0;">
-                            <li><strong>Sistema de capas:</strong> capa base térmica de secado rápido (tipo polar o lana merino), capa intermedia de polar o suéter abrigador, y capa exterior con chamarra de pluma (*down jacket*) resistente al viento.</li>
-                            <li><strong>Accesorios indispensables:</strong> gorro de lana o térmico que cubra las orejas, guantes impermeables o térmicos, y pañuelo tubular tipo *buff* para proteger el cuello y rostro.</li>
-                            <li><strong>Calzado:</strong> botas de montaña impermeables con suela de alta tracción (antideslizantes para senderos con hielo o nieve) y calcetines de lana merino.</li>
+                <ul style="padding-left: 18px; margin: 0; line-height: 1.7;">
+                    <li><strong>❄️ Alberta (0 °C a -8 °C):</strong>
+                        <ul style="margin: 4px 0 8px 0;">
+                            <li><strong>Capas:</strong> térmica base, polar intermedio y chamarra de pluma (*down jacket*) cortavientos.</li>
+                            <li><strong>Accesorios:</strong> gorro térmico, guantes impermeables y *buff*.</li>
+                            <li><strong>Calzado:</strong> botas de montaña impermeables con suela antideslizante y calcetines de lana merino.</li>
                         </ul>
                     </li>
-                    <li><strong>🌧️ Región de Vancouver y la Costa del Pacífico (10 °C a 3 °C):</strong>
+                    <li><strong>🌧️ Vancouver (10 °C a 3 °C):</strong>
                         <ul style="margin: 4px 0 0 0;">
-                            <li><strong>Sistema de capas:</strong> suéteres ligeros o sudaderas cómodas combinados con una chamarra o gabardina impermeable de alta calidad (tipo Gore-Tex) con gorro, ya que llueve con frecuencia.</li>
-                            <li><strong>Calzado:</strong> zapatillas deportivas o botines cómodos que sean resistentes al agua o impermeabilizados, además de un paraguas compacto de viaje.</li>
+                            <li><strong>Capas:</strong> suéteres cómodos con chamarra o gabardina impermeable (Gore-Tex) con gorro.</li>
+                            <li><strong>Calzado:</strong> calzado resistente al agua y paraguas compacto.</li>
                         </ul>
                     </li>
                 </ul>
             </div>
 
-            <!-- 3. Dinero -->
             <h2>3. 💳 Guía de dinero en Canadá</h2>
             <div class="info-box">
-                <ul style="padding-left: 18px; margin: 0;">
-                    <li><strong>Efectivo (CAD):</strong> país totalmente digital. Se recomienda llevar una reserva mínima (de 50 a 100 dólares canadienses por persona) exclusivamente para emergencias.</li>
-                    <li style="margin-top: 6px;"><strong>Tarjetas y Amex:</strong> las tarjetas Visa y Mastercard son aceptadas universalmente. <em>American Express (Amex)</em> es aceptada en cadenas grandes, hoteles y aeropuertos, pero en establecimientos pequeños o gasolineras rurales suelen rechazarla debido a sus altas comisiones, por lo que <strong>es indispensable llevar respaldo en Visa o Mastercard</strong>. Al pagar en las terminales electrónicas, elige siempre la moneda local (CAD).</li>
+                <ul style="padding-left: 18px; margin: 0; line-height: 1.6;">
+                    <li><strong>Efectivo (CAD):</strong> país 100% digital. Reserva mínima (50-100 CAD) solo para emergencias.</li>
+                    <li style="margin-top: 6px;"><strong>Tarjetas y Amex:</strong> Visa y Mastercard universales. <em>American Express (Amex)</em> suele ser rechazada en comercios pequeños o rurales, por lo que <strong>es indispensable llevar respaldo en Visa o Mastercard</strong>. Elige siempre CAD en terminales.</li>
                 </ul>
             </div>
 
-            <!-- 4. Vuelos -->
             <h2>4. 🛫 Logística de vuelos y hospedaje (Cubiertos)</h2>
             <div class="table-responsive">
                 <table>
@@ -375,163 +307,133 @@
                         <th>Detalle</th>
                         <th>Referencia o clave</th>
                     </tr>
-                    <tr class="tr-hover"><td>✈️ Vuelo CDMX-Calgary</td><td>WestJet (WS2229) — 5 de noviembre</td><td><strong>Clave de reservación:</strong> IOEKTS</td></tr>
-                    <tr class="tr-hover"><td>🚗 Renta de automóvil</td><td>SUV Mazda CX-5 (5 al 10 de noviembre)</td><td><strong>Número de reserva:</strong> 9738815603</td></tr>
-                    <tr class="tr-hover"><td>✈️ Vuelo Calgary-Vancouver</td><td>Flair Airlines (F8805) — 10 de noviembre</td><td><strong>Clave de reservación:</strong> WSMA2W</td></tr>
-                    <tr class="tr-hover"><td>✈️ Vuelo de regreso YVR-MEX</td><td>Aeroméxico (AM695) — 15 de noviembre</td><td><strong>Clave de reservación:</strong> LIFVAQ</td></tr>
+                    <tr><td>✈️ Vuelo CDMX-Calgary</td><td>WestJet (WS2229) — 5 nov</td><td><strong>Clave:</strong> IOEKTS</td></tr>
+                    <tr><td>🚗 Renta de automóvil</td><td>SUV Mazda CX-5 (5-10 nov)</td><td><strong>Reserva:</strong> 9738815603</td></tr>
+                    <tr><td>✈️ Vuelo Calgary-Vancouver</td><td>Flair (F8805) — 10 nov</td><td><strong>Clave:</strong> WSMA2W</td></tr>
+                    <tr><td>✈️ Vuelo Regreso YVR-MEX</td><td>Aeroméxico (AM695) — 15 nov</td><td><strong>Clave:</strong> LIFVAQ</td></tr>
                 </table>
             </div>
 
-            <!-- 5. Cronograma completo -->
             <h2>5. 🗓️ Cronograma y costos</h2>
 
             <div class="day-card">
-                <strong>Día 1: Miércoles 4 de noviembre — Salida de Querétaro a Ciudad de México 🎒</strong>
-                <ul style="padding-left: 20px; margin: 6px 0 0 0; color: var(--text-muted);">
-                    <li>15:00 h: traslado en autobús de Primera Plus desde la terminal TAQ (Querétaro) hacia la Terminal 1 del AICM — <em>Costo: $665 MXN</em>.</li>
-                    <li>21:00 h: encuentro del equipo en el aeropuerto, revisión de documentos y documentación en el mostrador de WestJet.</li>
+                <strong>Día 1: Miércoles 4 nov — Salida QRO a CDMX 🎒</strong>
+                <ul style="padding-left: 18px; margin: 5px 0 0 0; color: var(--text-muted);">
+                    <li>15:00 h: autobús Primera Plus TAQ a T1 AICM — <em>Costo: $665 MXN</em>.</li>
+                    <li>21:00 h: documentación en mostrador de WestJet.</li>
                 </ul>
-                <div class="optional-activity">
-                    ✨ <strong>Actividad opcional:</strong> cena ligera de bienvenida en la terminal aérea y compra de aperitivos para el vuelo nocturno — <em>Costo estimado: $250 - $400 MXN</em>.
-                </div>
+                <div class="optional-activity">✨ <strong>Opcional:</strong> cena ligera en aeropuerto — <em>$250 - $400 MXN</em>.</div>
             </div>
 
             <div class="day-card">
-                <strong>Día 2: Jueves 5 de noviembre — ¡Llegada a las Montañas Rocosas y Canmore! 🏔️</strong>
-                <ul style="padding-left: 20px; margin: 6px 0 0 0; color: var(--text-muted);">
-                    <li>Mañana: aterrizaje en Calgary, trámite y recogida del vehículo SUV Mazda CX-5 rentado.</li>
-                    <li>Tarde: trayecto escénico por carretera rumbo a Canmore, instalación en el hospedaje y descanso breve — <em>Costo de gasolina: $400 - $600 MXN por persona (dividido entre tres)</em>.</li>
+                <strong>Día 2: Jueves 5 nov — ¡Llegada a las Rocosas y Canmore! 🏔️</strong>
+                <ul style="padding-left: 18px; margin: 5px 0 0 0; color: var(--text-muted);">
+                    <li>Mañana: recogida de SUV Mazda CX-5 en Calgary.</li>
+                    <li>Tarde: trayecto a Canmore — <em>Gasolina: $400 - $600 MXN por persona (dividido entre tres)</em>.</li>
                 </ul>
-                <div class="optional-activity">
-                    ✨ <strong>Actividad opcional:</strong> caminata nocturna de ambientación por el centro histórico de Canmore y visita a una cafetería local — <em>Costo estimado: $150 - $250 MXN</em>.
-                </div>
+                <div class="optional-activity">✨ <strong>Opcional:</strong> caminata nocturna en Canmore — <em>$150 - $250 MXN</em>.</div>
             </div>
 
             <div class="day-card">
-                <strong>Día 3: Viernes 6 de noviembre — Vuelo en helicóptero y los lagos icónicos 🚁</strong>
-                <ul style="padding-left: 20px; margin: 6px 0 0 0; color: var(--text-muted);">
-                    <li>Mañana: experiencia de vuelo panorámico en helicóptero sobre cumbres nevadas y glaciares — <em>Costo: $4,500 - $6,000 MXN</em>.</li>
-                    <li>Tarde: visita y recorrido fotográfico por los extraordinarios lagos Louise y Moraine.</li>
+                <strong>Día 3: Viernes 6 nov — Helicóptero y lagos icónicos 🚁</strong>
+                <ul style="padding-left: 18px; margin: 5px 0 0 0; color: var(--text-muted);">
+                    <li>Mañana: vuelo panorámico en helicóptero — <em>Costo: $4,500 - $6,000 MXN</em>.</li>
+                    <li>Tarde: visita a los lagos Louise y Moraine.</li>
                 </ul>
-                <div class="optional-activity">
-                    ✨ <strong>Actividad opcional:</strong> degustación de un chocolate caliente alpino en la terraza histórica del Fairmont Château Lake Louise — <em>Costo estimado: $180 - $280 MXN</em>.
-                </div>
+                <div class="optional-activity">✨ <strong>Opcional:</strong> chocolate caliente en el Fairmont — <em>$180 - $280 MXN</em>.</div>
             </div>
 
             <div class="day-card">
-                <strong>Día 4: Sábado 7 de noviembre — Cañones alpinos y aguas termales ❄️</strong>
-                <ul style="padding-left: 20px; margin: 6px 0 0 0; color: var(--text-muted);">
-                    <li>Mañana: caminata de exploración invernal en el sendero de pasarelas de Johnston Canyon.</li>
-                    <li>Tarde: sesión de relajación y descanso en las piscinas de las aguas termales de Banff (Banff Upper Hot Springs) — <em>Costo: $400 - $550 MXN</em>.</li>
+                <strong>Día 4: Sábado 7 nov — Cañones y aguas termales ❄️</strong>
+                <ul style="padding-left: 18px; margin: 5px 0 0 0; color: var(--text-muted);">
+                    <li>Mañana: caminata invernal en Johnston Canyon.</li>
+                    <li>Tarde: aguas termales de Banff — <em>Costo: $400 - $550 MXN</em>.</li>
                 </ul>
-                <div class="optional-activity">
-                    ✨ <strong>Actividad opcional:</strong> recorrido por las tiendas especializadas en montaña y galerías de arte en la avenida principal de Banff.
-                </div>
+                <div class="optional-activity">✨ <strong>Opcional:</strong> tiendas y galerías en avenida principal de Banff.</div>
             </div>
 
             <div class="day-card">
-                <strong>Día 5: Domingo 8 de noviembre — Regreso a Calgary y arquitectura urbana 🏙️</strong>
-                <ul style="padding-left: 20px; margin: 6px 0 0 0; color: var(--text-muted);">
-                    <li>Mañana: viaje de regreso hacia la ciudad de Calgary por autopista panorámica — <em>Costo de gasolina: $300 - $450 MXN por persona (dividido entre tres)</em>.</li>
-                    <li>Tarde: ruta fotográfica por los puntos emblemáticos de la ciudad (Calgary Tower, Peace Bridge y el memorial Wonderland) — <em>Costo de acceso a torre: $400 - $500 MXN</em>.</li>
+                <strong>Día 5: Domingo 8 nov — Regreso a Calgary y ciudad 🏙️</strong>
+                <ul style="padding-left: 18px; margin: 5px 0 0 0; color: var(--text-muted);">
+                    <li>Mañana: viaje a Calgary — <em>Gasolina: $300 - $450 MXN por persona</em>.</li>
+                    <li>Tarde: Calgary Tower y Peace Bridge — <em>Torre: $400 - $500 MXN</em>.</li>
                 </ul>
-                <div class="optional-activity">
-                    ✨ <strong>Actividad opcional:</strong> visita al mercado gastronómico East Village para cenar especialidades regionales — <em>Costo estimado: $350 - $600 MXN</em>.
-                </div>
+                <div class="optional-activity">✨ <strong>Opcional:</strong> cena en mercado East Village — <em>$350 - $600 MXN</em>.</div>
             </div>
 
             <div class="day-card">
-                <strong>Día 6: Lunes 9 de noviembre — Aventura extrema en WinSport y preparativos 🌊</strong>
-                <ul style="padding-left: 20px; margin: 6px 0 0 0; color: var(--text-muted);">
-                    <li>Mañana: emoción en la tirolesa gigante (Monster Zipline) en las instalaciones olímpicas de WinSport — <em>Costo: $2,000 - $2,800 MXN</em>.</li>
-                    <li>Tarde: regreso al hospedaje, organización de equipaje y preparación logística para el vuelo matutino del día siguiente hacia la costa.</li>
+                <strong>Día 6: Lunes 9 nov — Aventura en WinSport y preparativos 🌊</strong>
+                <ul style="padding-left: 18px; margin: 5px 0 0 0; color: var(--text-muted);">
+                    <li>Mañana: Monster Zipline en WinSport — <em>Costo: $2,000 - $2,800 MXN</em>.</li>
+                    <li>Tarde: organización de equipaje.</li>
                 </ul>
-                <div class="optional-activity">
-                    ✨ <strong>Actividad opcional:</strong> cena de celebración de cierre de etapa en las Rocosas en un restaurante local de Calgary — <em>Costo estimado: $450 - $750 MXN</em>.
-                </div>
+                <div class="optional-activity">✨ <strong>Opcional:</strong> cena de cierre en Calgary — <em>$450 - $750 MXN</em>.</div>
             </div>
 
             <div class="day-card">
-                <strong>Día 7: Martes 10 de noviembre — Vuelo a Vancouver y ambientación costera 🌲</strong>
-                <ul style="padding-left: 20px; margin: 6px 0 0 0; color: var(--text-muted);">
-                    <li>Mañana: vuelo matutino desde Calgary rumbo a Vancouver (Flair Airlines) — <em>Vuelo cubierto</em>. Llegada, traslado al hospedaje y acomodo de equipaje.</li>
-                    <li>Tarde: primer recorrido introductorio por el paseo marítimo (Seawall) y el puerto de la ciudad.</li>
+                <strong>Día 7: Martes 10 nov — Vuelo a Vancouver 🌲</strong>
+                <ul style="padding-left: 18px; margin: 5px 0 0 0; color: var(--text-muted);">
+                    <li>Mañana: vuelo Calgary a Vancouver (Flair) — <em>Vuelo cubierto</em> y acomodo.</li>
+                    <li>Tarde: recorrido por el Seawall y puerto.</li>
                 </ul>
-                <div class="optional-activity">
-                    ✨ <strong>Actividad opcional:</strong> café y postre en el animado distrito de Yaletown — <em>Costo estimado: $150 - $250 MXN</em>.
-                </div>
+                <div class="optional-activity">✨ <strong>Opcional:</strong> café en Yaletown — <em>$150 - $250 MXN</em>.</div>
             </div>
 
             <div class="day-card">
-                <strong>Día 8: Miércoles 11 de noviembre — Naturaleza e historia urbana en Vancouver 🌿</strong>
-                <ul style="padding-left: 20px; margin: 6px 0 0 0; color: var(--text-muted);">
-                    <li>Mañana: visita profunda a Stanley Park para admirar los tótems históricos y los miradores al océano.</li>
-                    <li>Tarde: caminata por el icónico barrio histórico adoquinado de Gastown y fotografía junto al famoso reloj de vapor.</li>
+                <strong>Día 8: Miércoles 11 nov — Stanley Park y Gastown 🌿</strong>
+                <ul style="padding-left: 18px; margin: 5px 0 0 0; color: var(--text-muted);">
+                    <li>Mañana: tótems y miradores en Stanley Park.</li>
+                    <li>Tarde: barrio histórico de Gastown y reloj de vapor.</li>
                 </ul>
-                <div class="optional-activity">
-                    ✨ <strong>Actividad opcional:</strong> visita a una cervecería artesanal local en el área de Gastown — <em>Costo estimado: $200 - $350 MXN</em>.
-                </div>
+                <div class="optional-activity">✨ <strong>Opcional:</strong> cervecería artesanal local — <em>$200 - $350 MXN</em>.</div>
             </div>
 
             <div class="day-card">
-                <strong>Día 9: Jueves 12 de noviembre — Puentes colgantes y cumbres del Pacífico 🌁</strong>
-                <ul style="padding-left: 20px; margin: 6px 0 0 0; color: var(--text-muted);">
-                    <li>Mañana: aventura cruzando el impresionante puente colgante Capilano y sus pasarelas en las copas de los árboles — <em>Costo: aprox. $1,200 MXN</em>.</li>
-                    <li>Tarde: ascenso en teleférico hacia Grouse Mountain para disfrutar vistas panorámicas de toda la región — <em>Costo: aprox. $1,100 MXN</em>.</li>
+                <strong>Día 9: Jueves 12 nov — Puentes y cumbres del Pacífico 🌁</strong>
+                <ul style="padding-left: 18px; margin: 5px 0 0 0; color: var(--text-muted);">
+                    <li>Mañana: puente colgante Capilano — <em>Costo: aprox. $1,200 MXN</em>.</li>
+                    <li>Tarde: teleférico a Grouse Mountain — <em>Costo: aprox. $1,100 MXN</em>.</li>
                 </ul>
-                <div class="optional-activity">
-                    ✨ <strong>Actividad opcional:</strong> cena en la cima de Grouse Mountain observando las luces de la ciudad — <em>Costo estimado: $600 - $1,000 MXN</em>.
-                </div>
+                <div class="optional-activity">✨ <strong>Opcional:</strong> cena en la cima de Grouse Mountain — <em>$600 - $1,000 MXN</em>.</div>
             </div>
 
             <div class="day-card">
-                <strong>Día 10: Viernes 13 de noviembre — Cultura, mariscos y compras locales 🦐</strong>
-                <ul style="padding-left: 20px; margin: 6px 0 0 0; color: var(--text-muted);">
-                    <li>Mañana: recorrido por el vibrante mercado público de Granville Island y sus puestos de arte y alimentos.</li>
-                    <li>Tarde: tarde libre de compras y paseo por la famosa calle Robson Street.</li>
+                <strong>Día 10: Viernes 13 nov — Granville Island y compras 🦐</strong>
+                <ul style="padding-left: 18px; margin: 5px 0 0 0; color: var(--text-muted);">
+                    <li>Mañana: mercado público de Granville Island.</li>
+                    <li>Tarde: paseo por Robson Street.</li>
                 </ul>
-                <div class="optional-activity">
-                    ✨ <strong>Actividad opcional:</strong> degustación de platillos marinos frescos en los muelles de Granville Island — <em>Costo estimado: $500 - $900 MXN</em>.
-                </div>
+                <div class="optional-activity">✨ <strong>Opcional:</strong> mariscos frescos en muelles — <em>$500 - $900 MXN</em>.</div>
             </div>
 
             <div class="day-card">
-                <strong>Día 11: Sábado 14 de noviembre — Últimos rincones y preparación de maletas 🧳</strong>
-                <ul style="padding-left: 20px; margin: 6px 0 0 0; color: var(--text-muted);">
-                    <li>Mañana: visita al animado barrio de Chinatown y al jardín clásico chino Dr. Sun Yat-Sen.</li>
-                    <li>Tarde: empaque final de equipaje, revisión de documentos de regreso y última cena grupal en Vancouver.</li>
+                <strong>Día 11: Sábado 14 nov — Chinatown y maletas 🧳</strong>
+                <ul style="padding-left: 18px; margin: 5px 0 0 0; color: var(--text-muted);">
+                    <li>Mañana: Chinatown y jardín Dr. Sun Yat-Sen.</li>
+                    <li>Tarde: última cena grupal en Vancouver.</li>
                 </ul>
-                <div class="optional-activity">
-                    ✨ <strong>Actividad opcional:</strong> compra de chocolates y recuerdos canadienses de última hora — <em>Costo estimado: $300 - $600 MXN</em>.
-                </div>
+                <div class="optional-activity">✨ <strong>Opcional:</strong> compra de chocolates — <em>$300 - $600 MXN</em>.</div>
             </div>
 
             <div class="day-card">
-                <strong>Día 12: Domingo 15 de noviembre — Regreso a casa ✈️❤️</strong>
-                <ul style="padding-left: 20px; margin: 6px 0 0 0; color: var(--text-muted);">
-                    <li>Mañana: traslado al Aeropuerto de Vancouver para tomar el vuelo de regreso hacia el AICM (Ciudad de México).</li>
-                    <li>Tarde/Noche: conexión terrestre en autobús de regreso hacia la ciudad de Querétaro — <em>Costo: $665 MXN</em>.</li>
+                <strong>Día 12: Domingo 15 nov — Regreso a casa ✈️❤️</strong>
+                <ul style="padding-left: 18px; margin: 5px 0 0 0; color: var(--text-muted);">
+                    <li>Mañana: vuelo YVR a AICM.</li>
+                    <li>Tarde/Noche: autobús a Querétaro — <em>Costo: $665 MXN</em>.</li>
                 </ul>
-                <div class="optional-activity">
-                    ✨ <strong>Actividad opcional:</strong> compra exprés de jarabe de arce canadiense en el duty-free del aeropuerto antes de abordar — <em>Costo estimado: $300 - $600 MXN</em>.
-                </div>
+                <div class="optional-activity">✨ <strong>Opcional:</strong> jarabe de arce en duty-free — <em>$300 - $600 MXN</em>.</div>
             </div>
 
             <div class="total-budget">
                 📊 <strong>Escenarios de presupuesto (por persona):</strong><br><br>
-                1. 🟢 <strong>Escenario conservador (actividades esenciales y transportes obligatorios):</strong><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;• <strong>Rango total:</strong> $11,530 - $16,415 MXN.<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;• <em>Enfoque:</em> Se priorizan las actividades principales (helicóptero, cañones, teleférico de Grouse Mountain, autobús y gasolina compartida), manteniendo comidas prácticas y control de gastos.<br><br>
-                2. 🔵 <strong>Escenario sin restricciones de presupuesto (con todas las recomendaciones opcionales):</strong><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;• <strong>Rango total:</strong> $15,030 - $21,915 MXN.<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;• <em>Enfoque:</em> Incluye la realización de absolutamente todas las actividades opcionales sugeridas, cenas en mercados gastronómicos, cafés en distritos exclusivos y compras de recuerdos sin preocuparse por el límite de gasto.<br><br>
-                *(Nota: los vuelos principales, los alojamientos y la renta del automóvil ya se encuentran cubiertos y pagados en ambos escenarios).*
+                1. 🟢 <strong>Conservador (esenciales y transportes):</strong> $11,530 - $16,415 MXN.<br>
+                2. 🔵 <strong>Sin restricciones (con todas las opciones):</strong> $15,030 - $21,915 MXN.<br>
+                *(Nota: vuelos, hospedajes y auto ya están cubiertos).*
             </div>
         </div>
     </div>
 
     <script>
-        // Cuenta regresiva
         const tripDate = new Date("Nov 4, 2026 15:00:00").getTime();
         setInterval(function() {
             const now = new Date().getTime();
@@ -546,18 +448,15 @@
             }
         }, 1000);
 
-        // Validación y confirmación de seguridad en checkboxes
         document.querySelectorAll('.val-check').forEach(function(checkbox) {
             checkbox.addEventListener('click', function(event) {
                 if (this.checked) {
-                    const confirmarMarcar = confirm("¿Estás seguro de marcar este requisito como completado?");
-                    if (!confirmarMarcar) {
+                    if (!confirm("¿Estás seguro de marcar este requisito?")) {
                         event.preventDefault();
                         this.checked = false;
                     }
                 } else {
-                    const confirmarDesmarcar = confirm("¿Estás seguro de desmarcar este requisito?");
-                    if (!confirmarDesmarcar) {
+                    if (!confirm("¿Estás seguro de desmarcar este requisito?")) {
                         event.preventDefault();
                         this.checked = true;
                     }
