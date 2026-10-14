@@ -3,193 +3,420 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canadá: Rocosas y Pacífico</title>
+    <title>Canadá: Rocosas y Pacífico 🍁</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --accent: #06b6d4;
+            --bg-color: #0f172a;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px 10px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 850px;
+            background: #f8fafc;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Banner Header */
+        .banner {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.85), rgba(30, 58, 138, 0.85)), url('https://images.unsplash.com/photo-1503614472-8c93d56e92ce?q=80&w=1200&auto=format&fit=crop') center/cover;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .banner h1 {
+            margin: 10px 0 5px 0;
+            font-size: 2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .banner p {
+            color: #cbd5e1;
+            font-size: 1.05em;
+            margin-bottom: 20px;
+        }
+
+        .badge-date {
+            display: inline-block;
+            background: rgba(37, 99, 235, 0.9);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 0.9em;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .content-body {
+            padding: 25px;
+        }
+
+        /* Countdown */
+        .countdown-box {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 16px;
+            margin-bottom: 25px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+            border: 2px dashed #93c5fd;
+        }
+
+        .countdown-grid {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+
+        .time-card {
+            background: #f1f5f9;
+            padding: 10px 14px;
+            border-radius: 12px;
+            min-width: 65px;
+            transition: transform 0.3s ease;
+        }
+
+        .time-card:hover {
+            transform: translateY(-3px);
+            background: #e2e8f0;
+        }
+
+        .time-num {
+            font-size: 1.6em;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+        }
+
+        .time-label {
+            font-size: 0.7em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Status Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        @media(min-width: 600px) {
+            .cards-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+
+        .status-card {
+            background: var(--card-bg);
+            padding: 15px;
+            border-radius: 14px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            text-align: center;
+            border-top: 5px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .status-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.15);
+        }
+
+        /* Info boxes */
+        .info-box {
+            background: var(--card-bg);
+            padding: 18px;
+            border-radius: 14px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            transition: transform 0.2s ease;
+        }
+
+        .info-box:hover {
+            transform: translateX(3px);
+        }
+
+        .info-box.blue { border-left: 6px solid #0284c7; background: linear-gradient(to right, #f0f9ff, #ffffff); }
+        .info-box.green { border-left: 6px solid #10b981; }
+        .info-box.purple { border-left: 6px solid #8b5cf6; }
+        .info-box.cyan { border-left: 6px solid #06b6d4; }
+        .info-box.pink { border-left: 6px solid #ec4899; }
+
+        /* Day itinerary cards */
+        .day-card {
+            background: var(--card-bg);
+            padding: 16px;
+            margin-bottom: 14px;
+            border-radius: 14px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            border-left: 5px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .day-card:hover {
+            transform: scale(1.01);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.1);
+        }
+
+        h2 {
+            color: var(--text-main);
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+            margin-top: 35px;
+            font-size: 1.3em;
+        }
+
+        /* Checkbox list */
+        .check-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .check-item:last-child { border-bottom: none; }
+
+        .comment-input {
+            width: 100%;
+            margin-top: 6px;
+            padding: 6px 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 0.85em;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        .comment-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 5px rgba(37, 99, 235, 0.3);
+        }
+
+        .total-budget {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            color: white;
+            padding: 18px;
+            border-radius: 14px;
+            margin-top: 25px;
+            text-align: right;
+            font-size: 1.05em;
+            font-weight: bold;
+            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.2);
+        }
+    </style>
 </head>
-<body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.5; color: #2d3748; background-color: #f1f5f9; margin: 0; padding: 10px;">
+<body>
 
-    <div style="max-width: 800px; margin: 0 auto; background: #ffffff; padding: 15px; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); box-sizing: border-box;">
-        
-        <!-- Banner de Encabezado Integrado -->
-        <div style="background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.9)), url('https://images.unsplash.com/photo-1503614472-8c93d56e92ce?q=80&w=1200&auto=format&fit=crop') center/cover; color: white; padding: 25px 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 8px 20px rgba(15, 23, 42, 0.2);">
-            <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Canada_%28Pantone%29.svg" alt="Bandera de Canadá" style="width: 35px; height: auto; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">
-                <h1 style="margin: 0; font-size: 1.5em; display: inline-block;">🍁 Canadá: Rocosas y Pacífico 🏔️</h1>
-            </div>
-            <p style="margin: 5px 0 12px 0; color: #cbd5e1; font-size: 0.9em;">Itinerario épico, reservas y cuenta regresiva para la aventura</p>
-            <div style="background: rgba(59, 130, 246, 0.85); padding: 8px 12px; border-radius: 8px; text-align: center; font-size: 0.85em; border: 1px solid rgba(255,255,255,0.2);">
-                <strong>4 al 15 de noviembre de 2026</strong><br>
-                <span>¡Prepárense para la aventura!</span>
-            </div>
+    <div class="container">
+        <!-- Banner Header -->
+        <div class="banner">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Canada_%28Pantone%29.svg" alt="Bandera de Canadá" style="width: 45px; height: auto; border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); margin-bottom: 10px;">
+            <h1>Canadá: Rocosas y Pacífico 🏔️</h1>
+            <p>Itinerario épico, reservas y cuenta regresiva para la gran aventura</p>
+            <div class="badge-date">📅 4 al 15 de noviembre de 2026</div>
         </div>
 
-        <!-- Countdown Timer -->
-        <div style="background: white; padding: 15px; border-radius: 12px; margin-bottom: 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 2px dashed #3b82f6;">
-            <div style="font-size: 1.1em; color: #1e293b; margin-bottom: 10px; font-weight: bold;">⏳ Cuenta regresiva desde la salida de Querétaro a CDMX 🚀</div>
-            <div style="display: flex; justify-content: center; gap: 8px; flex-wrap: wrap;" id="countdown">
-                <div style="background: #f8fafc; padding: 8px 10px; border-radius: 8px; min-width: 55px;"><span style="font-size: 1.4em; font-weight: bold; color: #2563eb; display: block;" id="days">00</span><span style="font-size: 0.7em; color: #64748b; text-transform: uppercase;">Días</span></div>
-                <div style="background: #f8fafc; padding: 8px 10px; border-radius: 8px; min-width: 55px;"><span style="font-size: 1.4em; font-weight: bold; color: #2563eb; display: block;" id="hours">00</span><span style="font-size: 0.7em; color: #64748b; text-transform: uppercase;">Horas</span></div>
-                <div style="background: #f8fafc; padding: 8px 10px; border-radius: 8px; min-width: 55px;"><span style="font-size: 1.4em; font-weight: bold; color: #2563eb; display: block;" id="minutes">00</span><span style="font-size: 0.7em; color: #64748b; text-transform: uppercase;">Min</span></div>
-                <div style="background: #f8fafc; padding: 8px 10px; border-radius: 8px; min-width: 55px;"><span style="font-size: 1.4em; font-weight: bold; color: #2563eb; display: block;" id="seconds">00</span><span style="font-size: 0.7em; color: #64748b; text-transform: uppercase;">Seg</span></div>
-            </div>
-        </div>
-
-        <!-- Cards de estatus -->
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 20px;">
-            <div style="background: white; padding: 12px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); text-align: center; border-top: 4px solid #3b82f6;">🕒 <strong>Duración</strong><br>11 días / 10 noches</div>
-            <div style="background: white; padding: 12px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); text-align: center; border-top: 4px solid #3b82f6;">✈️ <strong>Vuelos</strong><br>Cubiertos</div>
-            <div style="background: white; padding: 12px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); text-align: center; border-top: 4px solid #3b82f6;">🏡 <strong>Hospedaje</strong><br>Cubierto</div>
-            <div style="background: white; padding: 12px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); text-align: center; border-top: 4px solid #3b82f6;">🚗 <strong>Auto</strong><br>Cubierto</div>
-        </div>
-
-        <div style="background: linear-gradient(to right, #e0f2fe, #bae6fd); border-left: 5px solid #0284c7; padding: 12px; border-radius: 8px; margin-bottom: 15px;">
-            🎒 <strong>Clase de viaje: Intermedio / Confort Moderado</strong><br>
-            <em>Estatus:</em> Vuelos, Airbnbs y auto ya cubiertos. El resto contempla actividades y comidas compartidas.
-        </div>
-
-        <div style="background: white; padding: 12px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-left: 5px solid #10b981;">
-            👥 <strong>Grupo oficial:</strong> Diego, Ana Karen y Fany.
-        </div>
-
-        <!-- 1. Checklist -->
-        <h2 style="color: #1e293b; border-bottom: 2px solid #cbd5e1; padding-bottom: 6px; margin-top: 25px; font-size: 1.15em;">1. ✅ Listas de verificación antes del viaje</h2>
-        <div style="background: white; padding: 12px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-left: 5px solid #8b5cf6;">
-            <p style="margin-top:0; color: #475569; font-size: 0.85em;"><em>Marquen sus avances (F: Fany, D: Diego, K: Karen):</em></p>
-            
-            <div style="padding: 8px 0; border-bottom: 1px solid #e2e8f0;">
-                <strong>🛂 Pasaportes vigentes</strong><br>
-                <span style="display:inline-block; margin-top:4px; font-size: 0.85em;">Fany <input type="checkbox" class="val-check"> | Diego <input type="checkbox" class="val-check"> | Karen <input type="checkbox" class="val-check"></span><br>
-                <input type="text" style="width:100%; margin-top:4px; padding:4px; border:1px solid #cbd5e1; border-radius:4px; box-sizing:border-box;" placeholder="Comentarios...">
+        <div class="content-body">
+            <!-- Countdown Timer -->
+            <div class="countdown-box">
+                <div style="font-size: 1.1em; color: var(--text-main); font-weight: bold;">⏳ Cuenta regresiva desde la salida de Querétaro a CDMX 🚀</div>
+                <div class="countdown-grid" id="countdown">
+                    <div class="time-card"><span class="time-num" id="days">00</span><span class="time-label">Días</span></div>
+                    <div class="time-card"><span class="time-num" id="hours">00</span><span class="time-label">Horas</span></div>
+                    <div class="time-card"><span class="time-num" id="minutes">00</span><span class="time-label">Min</span></div>
+                    <div class="time-card"><span class="time-num" id="seconds">00</span><span class="time-label">Seg</span></div>
+                </div>
             </div>
 
-            <div style="padding: 8px 0; border-bottom: 1px solid #e2e8f0;">
-                <strong>📄 eTA Canadá aprobada</strong><br>
-                <span style="display:inline-block; margin-top:4px; font-size: 0.85em;">Fany <input type="checkbox" class="val-check"> | Diego <input type="checkbox" class="val-check"> | Karen <input type="checkbox" class="val-check"></span><br>
-                <input type="text" style="width:100%; margin-top:4px; padding:4px; border:1px solid #cbd5e1; border-radius:4px; box-sizing:border-box;" placeholder="Comentarios...">
+            <!-- Cards de estatus -->
+            <div class="cards-grid">
+                <div class="status-card">🕒 <strong>Duración</strong><br><span style="font-size:0.9em; color:var(--text-muted);">11 días / 10 noches</span></div>
+                <div class="status-card">✈️ <strong>Vuelos</strong><br><span style="font-size:0.9em; color:var(--text-muted);">Cubiertos</span></div>
+                <div class="status-card">🏡 <strong>Hospedaje</strong><br><span style="font-size:0.9em; color:var(--text-muted);">Cubiertos</span></div>
+                <div class="status-card">🚗 <strong>Auto</strong><br><span style="font-size:0.9em; color:var(--text-muted);">Cubierto</span></div>
             </div>
 
-            <div style="padding: 8px 0; border-bottom: 1px solid #e2e8f0;">
-                <strong>🖨️ Impresión de reservas y vuelos</strong><br>
-                <span style="display:inline-block; margin-top:4px; font-size: 0.85em;">Fany <input type="checkbox" class="val-check"> | Diego <input type="checkbox" class="val-check"> | Karen <input type="checkbox" class="val-check"></span><br>
-                <input type="text" style="width:100%; margin-top:4px; padding:4px; border:1px solid #cbd5e1; border-radius:4px; box-sizing:border-box;" placeholder="Comentarios...">
+            <div class="info-box blue">
+                🎒 <strong>Clase de viaje: Intermedio / Confort Moderado</strong><br>
+                <em>Estatus:</em> Vuelos, Airbnbs y auto de renta <strong>ya se encuentran cubiertos y pagados</strong>. El presupuesto restante contempla actividades clave y comidas compartidas.
             </div>
 
-            <div style="padding: 8px 0; border-bottom: 1px solid #e2e8f0;">
-                <strong>💳 Tarjetas internacionales activas</strong><br>
-                <span style="display:inline-block; margin-top:4px; font-size: 0.85em;">Fany <input type="checkbox" class="val-check"> | Diego <input type="checkbox" class="val-check"> | Karen <input type="checkbox" class="val-check"></span><br>
-                <input type="text" style="width:100%; margin-top:4px; padding:4px; border:1px solid #cbd5e1; border-radius:4px; box-sizing:border-box;" placeholder="Comentarios...">
+            <div class="info-box green">
+                👥 <strong>Grupo de viaje oficial:</strong> Diego, Ana Karen y Fany.
             </div>
 
-            <div style="padding: 8px 0; border-bottom: 1px solid #e2e8f0;">
-                <strong>📱 Roaming o eSIM contratada</strong><br>
-                <span style="display:inline-block; margin-top:4px; font-size: 0.85em;">Fany <input type="checkbox" class="val-check"> | Diego <input type="checkbox" class="val-check"> | Karen <input type="checkbox" class="val-check"></span><br>
-                <input type="text" style="width:100%; margin-top:4px; padding:4px; border:1px solid #cbd5e1; border-radius:4px; box-sizing:border-box;" placeholder="Comentarios...">
+            <!-- 1. Checklist -->
+            <h2>1. ✅ Listas de verificación antes del viaje</h2>
+            <div class="info-box purple">
+                <p style="margin-top:0; color: var(--text-muted); font-size: 0.9em;"><em>Marquen sus avances (F: Fany, D: Diego, K: Karen):</em></p>
+                
+                <div class="check-item">
+                    <strong>🛂 Pasaportes vigentes</strong><br>
+                    <span style="font-size: 0.9em;">Fany <input type="checkbox" class="val-check"> | Diego <input type="checkbox" class="val-check"> | Karen <input type="checkbox" class="val-check"></span>
+                    <input type="text" class="comment-input" placeholder="Comentarios o notas...">
+                </div>
+
+                <div class="check-item">
+                    <strong>📄 eTA Canadá aprobada</strong><br>
+                    <span style="font-size: 0.9em;">Fany <input type="checkbox" class="val-check"> | Diego <input type="checkbox" class="val-check"> | Karen <input type="checkbox" class="val-check"></span>
+                    <input type="text" class="comment-input" placeholder="Comentarios o notas...">
+                </div>
+
+                <div class="check-item">
+                    <strong>🖨️ Impresión de reservas y vuelos</strong><br>
+                    <span style="font-size: 0.9em;">Fany <input type="checkbox" class="val-check"> | Diego <input type="checkbox" class="val-check"> | Karen <input type="checkbox" class="val-check"></span>
+                    <input type="text" class="comment-input" placeholder="Comentarios o notas...">
+                </div>
+
+                <div class="check-item">
+                    <strong>💳 Tarjetas internacionales activas</strong><br>
+                    <span style="font-size: 0.9em;">Fany <input type="checkbox" class="val-check"> | Diego <input type="checkbox" class="val-check"> | Karen <input type="checkbox" class="val-check"></span>
+                    <input type="text" class="comment-input" placeholder="Comentarios o notas...">
+                </div>
+
+                <div class="check-item">
+                    <strong>📱 Roaming o eSIM contratada</strong><br>
+                    <span style="font-size: 0.9em;">Fany <input type="checkbox" class="val-check"> | Diego <input type="checkbox" class="val-check"> | Karen <input type="checkbox" class="val-check"></span>
+                    <input type="text" class="comment-input" placeholder="Comentarios o notas...">
+                </div>
+
+                <div class="check-item">
+                    <strong>🔋 Powerbank (Batería portátil)</strong><br>
+                    <span style="font-size: 0.9em;">Fany <input type="checkbox" class="val-check"> | Diego <input type="checkbox" class="val-check"> | Karen <input type="checkbox" class="val-check"></span>
+                    <input type="text" class="comment-input" placeholder="Comentarios o notas...">
+                </div>
+
+                <div class="check-item">
+                    <strong>🔌 Adaptador de corriente</strong><br>
+                    <span style="font-size: 0.9em;">Fany <input type="checkbox" class="val-check"> | Diego <input type="checkbox" class="val-check"> | Karen <input type="checkbox" class="val-check"></span>
+                    <input type="text" class="comment-input" placeholder="Comentarios o notas...">
+                </div>
+
+                <div class="check-item">
+                    <strong>🧳 Bolsas Ziploc / reutilizables</strong><br>
+                    <span style="font-size: 0.9em;">Fany <input type="checkbox" class="val-check"> | Diego <input type="checkbox" class="val-check"> | Karen <input type="checkbox" class="val-check"></span>
+                    <input type="text" class="comment-input" placeholder="Comentarios o notas...">
+                </div>
+
+                <div class="check-item">
+                    <strong>💊 Kit de medicamentos personales</strong><br>
+                    <span style="font-size: 0.9em;">Fany <input type="checkbox" class="val-check"> | Diego <input type="checkbox" class="val-check"> | Karen <input type="checkbox" class="val-check"></span>
+                    <input type="text" class="comment-input" placeholder="Comentarios o notas...">
+                </div>
+
+                <div class="check-item">
+                    <strong>🧥 Ropa térmica y calzado</strong><br>
+                    <span style="font-size: 0.9em;">Fany <input type="checkbox" class="val-check"> | Diego <input type="checkbox" class="val-check"> | Karen <input type="checkbox" class="val-check"></span>
+                    <input type="text" class="comment-input" placeholder="Comentarios o notas...">
+                </div>
             </div>
 
-            <div style="padding: 8px 0; border-bottom: 1px solid #e2e8f0;">
-                <strong>🔋 Powerbank (Batería portátil)</strong><br>
-                <span style="display:inline-block; margin-top:4px; font-size: 0.85em;">Fany <input type="checkbox" class="val-check"> | Diego <input type="checkbox" class="val-check"> | Karen <input type="checkbox" class="val-check"></span><br>
-                <input type="text" style="width:100%; margin-top:4px; padding:4px; border:1px solid #cbd5e1; border-radius:4px; box-sizing:border-box;" placeholder="Comentarios...">
+            <!-- 2. Ropa -->
+            <h2>2. 🧥 Guía de empaque y ropa necesaria</h2>
+            <div class="info-box cyan">
+                <ul style="padding-left: 18px; margin: 0;">
+                    <li><strong>Alberta [0 °C a -8 °C] ❄️:</strong> Térmicas, chamarra de pluma, cortavientos, botas de nieve, gorro y guantes.</li>
+                    <li style="margin-top: 6px;"><strong>Vancouver [10 °C a 3 °C] 🌧️:</strong> Chamarra impermeable Gore-Tex, calzado resistente a lluvia y paraguas.</li>
+                </ul>
             </div>
 
-            <div style="padding: 8px 0; border-bottom: 1px solid #e2e8f0;">
-                <strong>🔌 Adaptador de corriente</strong><br>
-                <span style="display:inline-block; margin-top:4px; font-size: 0.85em;">Fany <input type="checkbox" class="val-check"> | Diego <input type="checkbox" class="val-check"> | Karen <input type="checkbox" class="val-check"></span><br>
-                <input type="text" style="width:100%; margin-top:4px; padding:4px; border:1px solid #cbd5e1; border-radius:4px; box-sizing:border-box;" placeholder="Comentarios...">
+            <!-- 3. Dinero -->
+            <h2>3. 💳 Guía de dinero</h2>
+            <div class="info-box pink">
+                <ul style="padding-left: 18px; margin: 0;">
+                    <li><strong>Efectivo:</strong> País 100% cashless. Reserva mínima (50-100 CAD) solo para emergencias.</li>
+                    <li style="margin-top: 6px;"><strong>Tarjetas:</strong> Visa/Mastercard. Al pagar, <strong>elige siempre CAD</strong> en la terminal.</li>
+                </ul>
             </div>
 
-            <div style="padding: 8px 0; border-bottom: 1px solid #e2e8f0;">
-                <strong>🧳 Bolsas Ziploc / reutilizables</strong><br>
-                <span style="display:inline-block; margin-top:4px; font-size: 0.85em;">Fany <input type="checkbox" class="val-check"> | Diego <input type="checkbox" class="val-check"> | Karen <input type="checkbox" class="val-check"></span><br>
-                <input type="text" style="width:100%; margin-top:4px; padding:4px; border:1px solid #cbd5e1; border-radius:4px; box-sizing:border-box;" placeholder="Comentarios...">
+            <!-- 4. Vuelos -->
+            <h2>4. 🛫 Logística de vuelos y auto</h2>
+            <div class="info-box">
+                <p style="margin-top:0;">✈️ <strong>Vuelo CDMX-Calgary:</strong> WestJet (WS2229) — Grupo: <code>IOEKTS</code></p>
+                <p>🚗 <strong>Renta Auto:</strong> SUV Mazda CX-5 — Reserva: <code>9738815603</code></p>
+                <p>✈️ <strong>Vuelo Calgary-Vancouver:</strong> Flair (F8805) — Grupo: <code>WSMA2W</code></p>
+                <p style="margin-bottom:0;">✈️ <strong>Regreso YVR-MEX:</strong> Aeroméxico (AM695) — Web: <code>LIFVAQ</code></p>
             </div>
 
-            <div style="padding: 8px 0; border-bottom: 1px solid #e2e8f0;">
-                <strong>💊 Kit de medicamentos personales</strong><br>
-                <span style="display:inline-block; margin-top:4px; font-size: 0.85em;">Fany <input type="checkbox" class="val-check"> | Diego <input type="checkbox" class="val-check"> | Karen <input type="checkbox" class="val-check"></span><br>
-                <input type="text" style="width:100%; margin-top:4px; padding:4px; border:1px solid #cbd5e1; border-radius:4px; box-sizing:border-box;" placeholder="Comentarios...">
+            <!-- 5. Cronograma -->
+            <h2>5. 🗓️ Cronograma y Costos</h2>
+
+            <div class="day-card">
+                <strong>Día 1: Miq. 4 nov - Salida QRO a CDMX 🎒</strong>
+                <p style="margin: 6px 0 0 0; color: var(--text-muted);">Autobús Primera Plus (TAQ-T1) y documentación.<br>💰 <em>Costo:</em> $665 MXN por persona.</p>
             </div>
 
-            <div style="padding: 8px 0;">
-                <strong>🧥 Ropa térmica y calzado</strong><br>
-                <span style="display:inline-block; margin-top:4px; font-size: 0.85em;">Fany <input type="checkbox" class="val-check"> | Diego <input type="checkbox" class="val-check"> | Karen <input type="checkbox" class="val-check"></span><br>
-                <input type="text" style="width:100%; margin-top:4px; padding:4px; border:1px solid #cbd5e1; border-radius:4px; box-sizing:border-box;" placeholder="Comentarios...">
+            <div class="day-card">
+                <strong>Día 2: Jue. 5 nov - ¡Llegada a las Rocosas! 🏔️</strong>
+                <p style="margin: 6px 0 0 0; color: var(--text-muted);">Vuelo a Calgary, auto y manejo a Canmore.<br>💰 <em>Costo:</em> $1,200 - $1,800 MXN por persona (Gasolina <strong>dividida entre tres</strong>).</p>
+            </div>
+
+            <div class="day-card">
+                <strong>Día 3: Vie. 6 nov - Helicóptero y Lagos 🚁</strong>
+                <p style="margin: 6px 0 0 0; color: var(--text-muted);">Vuelo panorámico y visita a lagos Louise y Moraine.<br>💰 <em>Costo:</em> $4,500 - $6,500 MXN por persona.</p>
+            </div>
+
+            <div class="day-card">
+                <strong>Día 4: Sáb. 7 nov - Cañones de hielo ❄️</strong>
+                <p style="margin: 6px 0 0 0; color: var(--text-muted);">Johnston Canyon y aguas termales en Banff.<br>💰 <em>Costo:</em> $400 - $700 MXN por persona.</p>
+            </div>
+
+            <div class="day-card">
+                <strong>Día 5: Dom. 8 nov - Traslado a Calgary 🏙️</strong>
+                <p style="margin: 6px 0 0 0; color: var(--text-muted);">Regreso a Calgary y ruta fotográfica.<br>💰 <em>Costo:</em> $400 - $800 MXN por persona (Comidas <strong>divididas entre tres</strong>).</p>
+            </div>
+
+            <div class="day-card">
+                <strong>Día 6: Lun. 9 nov - Zipline y vuelo 🌊</strong>
+                <p style="margin: 6px 0 0 0; color: var(--text-muted);">Monster Zipline en WinSport y vuelo a Vancouver.<br>💰 <em>Costo:</em> $2,000 - $3,300 MXN por persona.</p>
+            </div>
+
+            <div class="day-card">
+                <strong>Días 7 al 11: Mié. 11 al Sáb. 14 nov - Vancouver 🌲</strong>
+                <p style="margin: 6px 0 0 0; color: var(--text-muted);">Stanley Park, Capilano, Grouse Mountain y Gastown.<br>💰 <em>Costo:</em> $1,800 - $2,800 MXN por persona.</p>
+            </div>
+
+            <div class="day-card">
+                <strong>Día 12: Dom. 15 nov - Regreso a casa ✈️❤️</strong>
+                <p style="margin: 6px 0 0 0; color: var(--text-muted);">Vuelo YVR a CDMX y autobús a QRO.<br>💰 <em>Costo:</em> $1,000 - $1,500 MXN por persona.</p>
+            </div>
+
+            <div class="total-budget">
+                📊 Rango Total Estimado (por persona): $11,765 - $17,465 MXN
             </div>
         </div>
-
-        <!-- 2. Ropa -->
-        <h2 style="color: #1e293b; border-bottom: 2px solid #cbd5e1; padding-bottom: 6px; margin-top: 25px; font-size: 1.15em;">2. 🧥 Guía de empaque y ropa necesaria</h2>
-        <div style="background: white; padding: 12px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-left: 5px solid #06b6d4;">
-            <ul style="padding-left: 18px; margin: 0;">
-                <li><strong>Alberta [0 °C a -8 °C] ❄️:</strong> Térmicas, chamarra de pluma, cortavientos, botas de nieve, gorro y guantes.</li>
-                <li style="margin-top: 5px;"><strong>Vancouver [10 °C a 3 °C] 🌧️:</strong> Chamarra impermeable Gore-Tex, calzado resistente a lluvia y paraguas.</li>
-            </ul>
-        </div>
-
-        <!-- 3. Dinero -->
-        <h2 style="color: #1e293b; border-bottom: 2px solid #cbd5e1; padding-bottom: 6px; margin-top: 25px; font-size: 1.15em;">3. 💳 Guía de dinero</h2>
-        <div style="background: white; padding: 12px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-left: 5px solid #ec4899;">
-            <ul style="padding-left: 18px; margin: 0;">
-                <li><strong>Efectivo:</strong> País 100% cashless. Reserva mínima (50-100 CAD) solo para emergencias.</li>
-                <li><strong>Tarjetas:</strong> Visa/Mastercard. Al pagar, <strong>elige siempre CAD</strong> en la terminal.</li>
-            </ul>
-        </div>
-
-        <!-- 4. Vuelos -->
-        <h2 style="color: #1e293b; border-bottom: 2px solid #cbd5e1; padding-bottom: 6px; margin-top: 25px; font-size: 1.15em;">4. 🛫 Logística de vuelos y auto</h2>
-        <div style="background: white; padding: 12px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-            <p style="margin-top:0;">✈️ <strong>Vuelo CDMX-Calgary:</strong> WestJet (WS2229) — Grupo: <code>IOEKTS</code></p>
-            <p>🚗 <strong>Renta Auto:</strong> SUV Mazda CX-5 — Reserva: <code>9738815603</code></p>
-            <p>✈️ <strong>Vuelo Calgary-Vancouver:</strong> Flair (F8805) — Grupo: <code>WSMA2W</code></p>
-            <p style="margin-bottom:0;">✈️ <strong>Regreso YVR-MEX:</strong> Aeroméxico (AM695) — Web: <code>LIFVAQ</code></p>
-        </div>
-
-        <!-- 5. Cronograma -->
-        <h2 style="color: #1e293b; border-bottom: 2px solid #cbd5e1; padding-bottom: 6px; margin-top: 25px; font-size: 1.15em;">5. 🗓️ Cronograma y Costos</h2>
-
-        <div style="background: white; padding: 12px; margin-bottom: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.03); border-left: 4px solid #3b82f6;">
-            <strong>Día 1: Miq. 4 nov - Salida QRO a CDMX 🎒</strong>
-            <p style="margin: 4px 0 0 0; color: #475569;">Autobús Primera Plus (TAQ-T1) y documentación.<br>💰 <em>Costo:</em> $665 MXN por persona.</p>
-        </div>
-
-        <div style="background: white; padding: 12px; margin-bottom: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.03); border-left: 4px solid #3b82f6;">
-            <strong>Día 2: Jue. 5 nov - ¡Llegada a las Rocosas! 🏔️</strong>
-            <p style="margin: 4px 0 0 0; color: #475569;">Vuelo a Calgary, auto y manejo a Canmore.<br>💰 <em>Costo:</em> $1,200 - $1,800 MXN por persona (Gasolina <strong>dividida entre tres</strong>).</p>
-        </div>
-
-        <div style="background: white; padding: 12px; margin-bottom: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.03); border-left: 4px solid #3b82f6;">
-            <strong>Día 3: Vie. 6 nov - Helicóptero y Lagos 🚁</strong>
-            <p style="margin: 4px 0 0 0; color: #475569;">Vuelo panorámico y visita a lagos Louise y Moraine.<br>💰 <em>Costo:</em> $4,500 - $6,500 MXN por persona.</p>
-        </div>
-
-        <div style="background: white; padding: 12px; margin-bottom: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.03); border-left: 4px solid #3b82f6;">
-            <strong>Día 4: Sáb. 7 nov - Cañones de hielo ❄️</strong>
-            <p style="margin: 4px 0 0 0; color: #475569;">Johnston Canyon y aguas termales en Banff.<br>💰 <em>Costo:</em> $400 - $700 MXN por persona.</p>
-        </div>
-
-        <div style="background: white; padding: 12px; margin-bottom: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.03); border-left: 4px solid #3b82f6;">
-            <strong>Día 5: Dom. 8 nov - Traslado a Calgary 🏙️</strong>
-            <p style="margin: 4px 0 0 0; color: #475569;">Regreso a Calgary y ruta fotográfica.<br>💰 <em>Costo:</em> $400 - $800 MXN por persona (Comidas <strong>divididas entre tres</strong>).</p>
-        </div>
-
-        <div style="background: white; padding: 12px; margin-bottom: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.03); border-left: 4px solid #3b82f6;">
-            <strong>Día 6: Lun. 9 nov - Zipline y vuelo 🌊</strong>
-            <p style="margin: 4px 0 0 0; color: #475569;">Monster Zipline en WinSport y vuelo a Vancouver.<br>💰 <em>Costo:</em> $2,000 - $3,300 MXN por persona.</p>
-        </div>
-
-        <div style="background: white; padding: 12px; margin-bottom: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.03); border-left: 4px solid #3b82f6;">
-            <strong>Días 7 al 11: Mié. 11 al Sáb. 14 nov - Vancouver 🌲</strong>
-            <p style="margin: 4px 0 0 0; color: #475569;">Stanley Park, Capilano, Grouse Mountain y Gastown.<br>💰 <em>Costo:</em> $1,800 - $2,800 MXN por persona.</p>
-        </div>
-
-        <div style="background: white; padding: 12px; margin-bottom: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.03); border-left: 4px solid #3b82f6;">
-            <strong>Día 12: Dom. 15 nov - Regreso a casa ✈️❤️</strong>
-            <p style="margin: 4px 0 0 0; color: #475569;">Vuelo YVR a CDMX y autobús a QRO.<br>💰 <em>Costo:</em> $1,000 - $1,500 MXN por persona.</p>
-        </div>
-
-        <div style="background: #f8fafc; border: 2px solid #cbd5e1; padding: 12px; border-radius: 8px; margin-top: 15px; font-size: 0.9em; font-weight: bold; color: #1e293b; text-align: right;">
-            📊 Rango Total Estimado (por persona): $11,765 - $17,465 MXN
-        </div>
-
     </div>
 
     <script>
@@ -208,7 +435,7 @@
             }
         }, 1000);
 
-        // Validación y confirmación al marcar o desmarcar el checklist
+        // Validación y confirmación de seguridad en checkboxes
         document.querySelectorAll('.val-check').forEach(function(checkbox) {
             checkbox.addEventListener('click', function(event) {
                 if (this.checked) {
