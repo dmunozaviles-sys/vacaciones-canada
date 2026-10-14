@@ -359,4 +359,106 @@
                 <ul style="padding-left: 20px; margin: 6px 0 0 0; color: var(--text-muted);">
                     <li>15:00 h: Autobús Primera Plus desde TAQ (Querétaro) a T1 AICM.</li>
                     <li>22:15 h: Documentación en mostrador de WestJet.</li>
-                    <li>💰
+                    <li>💰 <em>Costo:</em> $665 MXN por persona.</li>
+                </ul>
+            </div>
+
+            <div class="day-card">
+                <strong>Día 2: Jue. 5 nov - ¡Llegada a las Rocosas! 🏔️</strong>
+                <ul style="padding-left: 20px; margin: 6px 0 0 0; color: var(--text-muted);">
+                    <li>Vuelo a Calgary, recogida de auto y manejo escénico hacia Canmore.</li>
+                    <li>💰 <em>Costo:</em> $1,200 - $1,800 MXN aprox. por persona (Gasolina <strong>dividida entre tres</strong>).</li>
+                </ul>
+            </div>
+
+            <div class="day-card">
+                <strong>Día 3: Vie. 6 nov - Helicóptero y Grandes Lagos 🚁</strong>
+                <ul style="padding-left: 20px; margin: 6px 0 0 0; color: var(--text-muted);">
+                    <li>Vuelo panorámico sobre cumbres y visita a los lagos Louise y Moraine.</li>
+                    <li>💰 <em>Costo:</em> $4,500 - $6,500 MXN aprox. por persona.</li>
+                </ul>
+            </div>
+
+            <div class="day-card">
+                <strong>Día 4: Sáb. 7 nov - Cañones de hielo ❄️</strong>
+                <ul style="padding-left: 20px; margin: 6px 0 0 0; color: var(--text-muted);">
+                    <li>Caminata en Johnston Canyon y aguas termales en Banff.</li>
+                    <li>💰 <em>Costo:</em> $400 - $700 MXN aprox. por persona.</li>
+                </ul>
+            </div>
+
+            <div class="day-card">
+                <strong>Día 5: Dom. 8 nov - Traslado a Calgary 🏙️</strong>
+                <ul style="padding-left: 20px; margin: 6px 0 0 0; color: var(--text-muted);">
+                    <li>Regreso a Calgary y ruta fotográfica (*Wonderland* y *Peace Bridge*).</li>
+                    <li>💰 <em>Costo:</em> $400 - $800 MXN por persona (Comidas compartidas <strong>divididas entre tres</strong>).</li>
+                </ul>
+            </div>
+
+            <div class="day-card">
+                <strong>Día 6: Lun. 9 nov - Zipline y vuelo a Vancouver 🌊</strong>
+                <ul style="padding-left: 20px; margin: 6px 0 0 0; color: var(--text-muted);">
+                    <li>Monster Zipline en WinSport, entrega de auto y vuelo matutino a Vancouver el día 10.</li>
+                    <li>💰 <em>Costo:</em> $2,000 - $3,300 MXN aprox. por persona.</li>
+                </ul>
+            </div>
+
+            <div class="day-card">
+                <strong>Días 7 al 11: Mié. 11 al Sáb. 14 nov - Vancouver 🌲</strong>
+                <ul style="padding-left: 20px; margin: 6px 0 0 0; color: var(--text-muted);">
+                    <li>Stanley Park, Capilano Suspension Bridge, Grouse Mountain y Gastown.</li>
+                    <li>💰 <em>Costo:</em> $1,800 - $2,800 MXN aprox. por persona.</li>
+                </ul>
+            </div>
+
+            <div class="day-card">
+                <strong>Día 12: Dom. 15 nov - Regreso a casa ✈️❤️</strong>
+                <ul style="padding-left: 20px; margin: 6px 0 0 0; color: var(--text-muted);">
+                    <li>Vuelo YVR a CDMX y autobús de regreso a Querétaro.</li>
+                    <li>💰 <em>Costo:</em> $1,000 - $1,500 MXN por persona.</li>
+                </ul>
+            </div>
+
+            <div class="total-budget">
+                📊 Rango de Costos Totales Estimados por Actividades y Logística (por persona): $11,765 - $17,465 MXN
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Cuenta regresiva
+        const tripDate = new Date("Nov 4, 2026 15:00:00").getTime();
+        setInterval(function() {
+            const now = new Date().getTime();
+            const distance = tripDate - now;
+            if (distance > 0) {
+                document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+                document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
+            } else {
+                document.getElementById("countdown").innerHTML = "¡El viaje ha comenzado! 🎉🇨🇦";
+            }
+        }, 1000);
+
+        // Validación y confirmación de seguridad en checkboxes
+        document.querySelectorAll('.val-check').forEach(function(checkbox) {
+            checkbox.addEventListener('click', function(event) {
+                if (this.checked) {
+                    const confirmarMarcar = confirm("¿Estás seguro de marcar este requisito como completado?");
+                    if (!confirmarMarcar) {
+                        event.preventDefault();
+                        this.checked = false;
+                    }
+                } else {
+                    const confirmarDesmarcar = confirm("¿Estás seguro de desmarcar este requisito?");
+                    if (!confirmarDesmarcar) {
+                        event.preventDefault();
+                        this.checked = true;
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
