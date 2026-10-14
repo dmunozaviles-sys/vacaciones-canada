@@ -42,7 +42,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Banner Header */
+        /* Banner Header con bandera a la derecha del título */
         .banner {
             background: linear-gradient(135deg, rgba(15, 23, 42, 0.85), rgba(30, 58, 138, 0.85)), url('https://images.unsplash.com/photo-1503614472-8c93d56e92ce?q=80&w=1200&auto=format&fit=crop') center/cover;
             color: white;
@@ -50,14 +50,25 @@
             text-align: center;
         }
 
-        .banner h1 {
-            margin: 10px 0 5px 0;
-            font-size: 2em;
+        .banner-title-wrapper {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
+            gap: 15px;
             flex-wrap: wrap;
+            margin: 10px 0 5px 0;
+        }
+
+        .banner h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        .banner img {
+            width: 45px;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
         .banner p {
@@ -258,10 +269,12 @@
 <body>
 
     <div class="container">
-        <!-- Banner Header -->
+        <!-- Banner Header con bandera a la derecha del título -->
         <div class="banner">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Canada_%28Pantone%29.svg" alt="Bandera de Canadá" style="width: 45px; height: auto; border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); margin-bottom: 10px;">
-            <h1>Canadá: Rocosas y Pacífico 🏔️</h1>
+            <div class="banner-title-wrapper">
+                <h1>🏔️ Canadá: Rocosas y Pacífico</h1>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Canada_%28Pantone%29.svg" alt="Bandera de Canadá">
+            </div>
             <p>Itinerario épico, reservas y cuenta regresiva para la gran aventura</p>
             <div class="badge-date">📅 4 al 15 de noviembre de 2026</div>
         </div>
@@ -317,19 +330,30 @@
                         <tr class="tr-hover"><td>🔋 <strong>Batería portátil</strong></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td><input type="text" class="comment-input" placeholder="Nota..."></td></tr>
                         <tr class="tr-hover"><td>🔌 <strong>Adaptador de corriente</strong></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td><input type="text" class="comment-input" placeholder="Nota..."></td></tr>
                         <tr class="tr-hover"><td>🧳 <strong>Bolsas Ziploc</strong></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td><input type="text" class="comment-input" placeholder="Nota..."></td></tr>
-                        <tr class="tr-hover"><td>💊 <strong>Kit de medicamentos</strong></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td><input type="text" class="comment-input" placeholder="Nota..."></td></tr>
+                        <tr class="tr-hover">CDATA[💊 <strong>Kit de medicamentos</strong></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td><input type="text" class="comment-input" placeholder="Nota..."></td></tr>
                         <tr class="tr-hover"><td>🧥 <strong>Ropa térmica y calzado</strong></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td style="text-align: center;"><input type="checkbox" class="val-check" style="cursor:pointer;"></td><td><input type="text" class="comment-input" placeholder="Nota..."></td></tr>
                     </tbody>
                 </table>
             </div>
             <p style="font-size: 0.8em; color: var(--text-muted); text-align: center;">💡 <em>Desliza la tabla horizontalmente en tu dispositivo móvil si es necesario para ver todas las columnas.</em></p>
 
-            <!-- 2. Ropa -->
-            <h2>2. 🧥 Guía de empaque y ropa necesaria</h2>
+            <!-- 2. Ropa detallada -->
+            <h2>2. 🧥 Guía detallada de empaque, ropa y calzado</h2>
             <div class="info-box">
-                <ul style="padding-left: 18px; margin: 0;">
-                    <li><strong>Alberta [0 °C a -8 °C] ❄️:</strong> capa base térmica, chamarra aislante de pluma, cortavientos impermeable, botas de montaña con tracción, gorro, guantes y pañuelo tubular (buff).</li>
-                    <li style="margin-top: 6px;"><strong>Vancouver [10 °C a 3 °C] 🌧️:</strong> chamarra impermeable tipo Gore-Tex con gorro, calzado resistente a la humedad y paraguas compacto.</li>
+                <ul style="padding-left: 18px; margin: 0; line-height: 1.8;">
+                    <li><strong>❄️ Región de Alberta (Montañas Rocosas — 0 °C a -8 °C):</strong>
+                        <ul style="margin: 4px 0 10px 0;">
+                            <li><strong>Sistema de capas:</strong> Capa base térmica de secado rápido (tipo polar o lana merino), capa intermedia de polar o suéter abrigador, y capa exterior con chamarra de pluma (*down jacket*) resistente al viento.</li>
+                            <li><strong>Accesorios indispensables:</strong> Gorro de lana o térmico que cubra las orejas, guantes impermeables o térmicos, y pañuelo tubular tipo *buff* para proteger el cuello y rostro.</li>
+                            <li><strong>Calzado:</strong> Botas de montaña impermeables con suela de alta tracción (antideslizantes para senderos con hielo o nieve) y calcetines de lana merino.</li>
+                        </ul>
+                    </li>
+                    <li><strong>🌧️ Región de Vancouver y la Costa del Pacífico (10 °C a 3 °C):</strong>
+                        <ul style="margin: 4px 0 0 0;">
+                            <li><strong>Sistema de capas:</strong> Suéteres ligeros o sudaderas cómodas combinados con una chamarra o gabardina impermeable de alta calidad (tipo Gore-Tex) con gorro, ya que llueve con frecuencia.</li>
+                            <li><strong>Calzado:</strong> Zapatillas deportivas o botines cómodos que sean resistentes al agua o impermeabilizados, además de un paraguas compacto de viaje.</li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
 
